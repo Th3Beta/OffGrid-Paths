@@ -33,7 +33,10 @@ Este proyecto fue desarrollado como parte del trabajo final del instituto, pero 
 - Enviar un pull request con tu contribución.
 
 ## 📅 Estado del Proyecto
-El proyecto está en su fase final de desarrollo y se espera mejorar con futuras actualizaciones. Próximamente se añadirán:
+El proyecto está en su fase inicial de desarrollo y se espera mejorar con futuras actualizaciones. Próximamente se añadirán:
+- Menu desplegable
+- Sistema de registro e inicio de sesion
+- Diferentes rutas
 - Comentarios y reseñas en las rutas.
 - Un sistema de mapas interactivos.
 
