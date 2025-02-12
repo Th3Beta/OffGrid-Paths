@@ -17,7 +17,7 @@ OffGrid Paths es un proyecto final de instituto diseñado para proporcionar una 
 ## 👤 Instalación y Uso
 1. **Clonar el repositorio:**
    ```bash
-   git clone https://github.com/tuusuario/offgrid-paths.git
+   git clone https://github.com/Th3Beta/OffGrid-Paths.git
    ```
 2. **Abrir el proyecto:**
    - Puedes abrir el archivo `index.html` en tu navegador directamente.
