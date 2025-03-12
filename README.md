@@ -13,6 +13,7 @@ OffGrid Paths es un proyecto final de instituto diseñado para proporcionar una 
 - **HTML5** para la estructura.
 - **CSS3** para el diseño y la presentación.
 - **JavaScript** para la interactividad.
+- **Java** para enlazar la API. 
 
 ## 👤 Instalación y Uso
 1. **Clonar el repositorio:**
