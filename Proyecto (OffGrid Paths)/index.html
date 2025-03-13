@@ -1,41 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OffGrid Paths</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to OffGrid Paths</h1>
-    </header>
+    <nav>
+        <ul>
+            <li><a href="#slideshow-container" class="nav-link">Inicio</a></li>
+            <li><a href="#about-us" class="nav-link">About Us</a></li>
+            <li><a href="#nuestras-rutas" class="nav-link">Nuestras rutas</a></li>
+            <li><a href="#our-services" class="nav-link">Our Services</a></li>
+            <li><a href="#head-login" class="nav-link" onclick="openPopup('login-popup')">Login</a></li>
+            <li><a href="#head-create" class="nav-link" onclick="openPopup('create-popup')">Crear cuenta</a></li>
+        </ul>
+    </nav>
     <main>
         <!-- INICIO DE SESIÓN -->
-        <section>
-            <div class="login">
-                <h2 id="head-login">LOGIN</h2>
-                <input type="text" id="username-login" placeholder="username"></br>
-                <input type="password" id="password-login" placeholder="password"></br></br>
-                <button type="button" id="btn-login">Login</button>
-                <p id="go-create">No tienes cuenta? Crea una </p>
-                <a href="#head-create">
-                    <button type="button">Crear cuenta</button>
-                </a>
+        <div id="login-popup" class="popup">
+            <div class="popup-content login-box">
+                <span class="close" onclick="closePopup('login-popup')">&times;</span>
+                <h2>Login</h2>
+                <form>
+                    <div class="user-box">
+                        <input type="text" name="username" required="">
+                        <label>Username</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="password" name="password" required="">
+                        <label>Password</label>
+                    </div>
+                    <a href="#" onclick="closePopup('login-popup'); openPopup('create-popup');">
+                        Crear cuenta
+                    </a>
+                </form>
             </div>
-        </section>
+        </div>
         <!-- CREAR CUENTA -->
-        <section>
-            <div class="create-account">
-                <h2 id="head-create">CREATE ACCOUNT</h2>
-                <input type="text" id="username-create" placeholder="username"></br>
-                <input type="password" id="password-create" placeholder="password"></br></br>
-                <button type="button" id="btn-create">Create account</button>
+        <div id="create-popup" class="popup">
+            <div class="popup-content login-box">
+                <span class="close" onclick="closePopup('create-popup')">&times;</span>
+                <h2>Create Account</h2>
+                <form>
+                    <div class="user-box">
+                        <input type="text" name="username" required="">
+                        <label>Username</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="password" name="password" required="">
+                        <label>Password</label>
+                    </div>
+                    <a href="#" onclick="closePopup('create-popup'); openPopup('login-popup');">
+                        Login
+                    </a>
+                </form>
             </div>
-        </section>        
-        
+        </div>
+        <br>
+        <br>
         <!-- CARRUSEL IMAGENES -->
-        <section>
+        <section id="slideshow-container">
             <div class="slideshow-container">
                 <div class="mySlides fade">
                     <img src="./images/bici1.jpg">
@@ -76,59 +104,78 @@
                 <span class="dot" onclick="currentSlide(8)"></span>
             </div>
         </section>
-        <section>
-            <h2>About Us</h2>
-            <p>Discover the best off-grid paths and adventures.</p>
-        </section>
         <!--La sección de las rutas-->
-        <div>
+        <div id="nuestras-rutas">
             <h2>Nuestras rutas</h2>
-            <ul>
-                <li>Ruta 1: Nombre <button class="botonDesplegable">Ver más</button>
-                    <div class="dropdownMenu">
-                        <a href="#">Detalle 1</a>
-                        <a href="#">Detalle 2</a>
-                        <a href="#">Detalle 3</a>
-                    </div>
-                </li>
-                <li>Ruta 2: Nombre <button class="botonDesplegable">Ver más</button>
-                    <div class="dropdownMenu">
-                        <a href="#">Detalle A</a>
-                        <a href="#">Detalle B</a>
-                        <a href="#">Detalle C</a>
-                    </div>
-                </li>
-                <li>Ruta 3: Nombre <button class="botonDesplegable">Ver más</button>
-                    <div class="dropdownMenu">
-                        <a href="#">Detalle A</a>
-                        <a href="#">Detalle B</a>
-                        <a href="#">Detalle C</a>
-                    </div>
-                </li>
-                <li>Ruta 4: Nombre <button class="botonDesplegable">Ver más</button>
-                    <div class="dropdownMenu">
-                        <a href="#">Detalle A</a>
-                        <a href="#">Detalle B</a>
-                        <a href="#">Detalle C</a>
-                    </div>
-                </li>
-                <li>Ruta 5: Nombre <button class="botonDesplegable">Ver más</button>
-                    <div class="dropdownMenu">
-                        <a href="#">Detalle A</a>
-                        <a href="#">Detalle B</a>
-                        <a href="#">Detalle C</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <section>
-            <h2>Our Services</h2>
-            <p>We offer guided tours, equipment rentals, and more.</p>
-        </section>
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+            <section class="hero-section">
+                <div class="card-grid">
+                    <a class="card" href="#">
+                        <div class="card__background"
+                            style="background-image: url(images/ruta1.jpg)">
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category"> Alfondeguilla, Valencia (España)</p>
+                            <h3 class="card__heading">Castillo de Castro</h3>
+                            <!---->> https://es.wikiloc.com/rutas-senderismo/subida-al-castillo-de-castro-por-el-collado-de-la-mina-bco-de-la-horteta-y-descenso-por-la-font-de-15473620 -->
+                        </div>
+                    </a>
+                    <a class="card" href="#">
+                        <div class="card__background"
+                            style="background-image: url(images/ruta2.jpg)">
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category"> Puerto de Cotos, Castilla y León (España)</p>
+                            <h3 class="card__heading">Pico Peñalara</h3>
+                            <!-- https://es.wikiloc.com/rutas-senderismo/pico-penalara-2428m-circular-integral-laguna-grande-laguna-claveles-5-lagunas-laguna-de-los-pajaros-171616911 -->
+                        </div>
+                    </a>
+                    <a class="card" href="#">
+                        <div class="card__background"
+                            style="background-image: url(images/ruta3.jpg)">
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category">Las Dehesas, Madrid (España)</p>
+                            <h3 class="card__heading">Mirador de los Poetas</h3>
+                            <!-- https://es.wikiloc.com/rutas-senderismo/pico-penalara-2428m-circular-integral-laguna-grande-laguna-claveles-5-lagunas-laguna-de-los-pajaros-171616911 -->
+                        </div>
+                        </li>
+                        <a class="card" href="#">
+                            <div class="card__background"
+                                style="background-image: url(images/ruta4.jpg)">
+                            </div>
+                            <div class="card__content">
+                                <p class="card__category">Fuente Dé, Cantabria</p>
+                                <h3 class="card__heading">Fuente Dé</h3>
+                                <!-- https://es.wikiloc.com/rutas-senderismo/mirador-de-los-poetas-reloj-de-cela-ducha-de-los-alemanes-las-dehesas-de-cercedilla-9042913 -->
+                            </div>
+                        </a>
+                    </a>
+                </div>
+            </section>
+            <section id="about-us">
+                <h2>About Us</h2>
+                <p>Discover the best off-grid paths and adventures.</p>
+            </section>
+            <section id="our-services">
+                <h2>Our Services</h2>
+                <p>We offer guided tours, equipment rentals, and more.</p>
+            </section>
     </main>
     <footer>
         <p>&copy; 2023 OffGrid Paths. All rights reserved.</p>
     </footer>
+    <script src="scripts/scripts.js"></script>
+    <script>
+        function openPopup(popupId) {
+            document.getElementById(popupId).style.display = 'block';
+        }
+
+        function closePopup(popupId) {
+            document.getElementById(popupId).style.display = 'none';
+        }
+    </script>
 </body>
-<script src="scripts/scripts.js"></script>
+
 </html>
