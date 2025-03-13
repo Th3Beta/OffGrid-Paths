@@ -1,3 +1,4 @@
+//Carrusel de imágenes
 document.querySelectorAll(".botonDesplegable").forEach(button => {
     button.addEventListener("click", function() {
         let menu = this.nextElementSibling;
@@ -36,3 +37,11 @@ function showSlides(n) {
     dots[slideIndex-1].className += " active";
 }
 
+// Pop-ups
+function openPopup(popupId) {
+    document.getElementById(popupId).style.display = 'block';
+}
+
+function closePopup(popupId) {
+    document.getElementById(popupId).style.display = 'none';
+}
