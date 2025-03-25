@@ -1,35 +1,82 @@
 /* Barra de navegación */
 nav {
-    background-color: #333;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+  background-color: #30412b;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 50px;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
 }
 
 nav ul li {
-    float: left;
+  float: left;
 }
 
 nav ul li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 nav ul li a:hover {
-    background-color: #111;
+  background-color: #22331d;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.search-bar button {
+  background-color: #24702a;
+  border: none;
+  padding: 10px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.search-bar button img {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* Icono busqueda */
+.icono-busqueda {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: url('../images/busqueda.png') no-repeat center center;
+  background-size: cover;
+}
+
+/* Icono Iniciar sesión */
+.icono-login {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: url('../images/inicio-sesion1.png') no-repeat center center;
+    background-size: cover;
 }
 
 /* Pop-ups */
@@ -305,7 +352,7 @@ nav ul li a:hover {
     right: 0;
     top: 0;
     transform-origin: center;
-    trsnsform: scale(1) translateZ(0);
+    transform: scale(1) translateZ(0);
     transition: 
       filter 200ms linear,
       transform 200ms linear;
