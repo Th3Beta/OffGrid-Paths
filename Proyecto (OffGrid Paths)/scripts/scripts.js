@@ -45,3 +45,12 @@ function openPopup(popupId) {
 function closePopup(popupId) {
     document.getElementById(popupId).style.display = 'none';
 }
+
+// Cambio icono iniciar sesión + Validacion inicio de sesión
+function handleLogin(event) {
+    event.preventDefault();
+    // Aquí puedes agregar la lógica de autenticación
+    // Si la autenticación es exitosa, cambia el icono
+    document.getElementById('login-icon').src = 'images/inicio-sesion2.png';
+    closePopup('login-popup');
+}
