@@ -44,7 +44,7 @@
                         <label>Password</label>
                     </div>
                     <a href="#" onclick="closePopup('login-popup'); openPopup('create-popup');">Crear cuenta</a>
-                    <a href="#" onclick="closePopup('login-popup');">Submit</a>
+                    <a href="#" onclick="validateLogin(event)">Submit</a>
                 </form>
             </div>
         </div>
@@ -67,12 +67,10 @@
                         <label>Password</label>
                     </div>
                     <a href="#" onclick="closePopup('create-popup'); openPopup('login-popup');">Login</a>
-                    <a href="#" onclick="closePopup('create-popup');">Submit</a>
+                    <a href="#" onclick="validateRegister(event)">Submit</a>
                 </form>
             </div>
         </div>
-        <br>
-        <br>
         <!-- CARRUSEL IMAGENES -->
         <section id="slideshow-container">
             <div class="slideshow-container">
@@ -165,14 +163,102 @@
                     </a>
                 </div>
             </section>
-            <section id="about-us">
-                <h2>About Us</h2>
-                <p>Discover the best off-grid paths and adventures.</p>
-            </section>
             <section id="our-services">
-                <h2>Our Services</h2>
-                <p>We offer guided tours, equipment rentals, and more.</p>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="site-heading text-center">
+                                    <h2>What we <span>Offer</span></h2>
+                                    <h4>Lorem Ipsum is simply dummy text</h4>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="row our-offer-items less-carousel">
+                                <!-- Single Item -->
+                                <div class="col-md-4 col-sm-6 equal-height">
+                                    <div class="item">
+                                        <i class="fas fa-pen-fancy"></i>
+                                        <h4>Project creation</h4>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- End Single Item -->
+            
+                                <!-- Single Item -->
+                                <div class="col-md-4 col-sm-6 equal-height">
+                                    <div class="item">
+                                        <i class="fas fa-dharmachakra"></i>
+                                        <h4>Software Development</h4>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- End Single Item -->
+            
+                                <!-- Single Item -->
+                                <div class="col-md-4 col-sm-6 equal-height">
+                                    <div class="item">
+                                        <i class="fas fa-tasks"></i>
+                                        <h4>Porject Management</h4>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- End Single Item -->
+            
+                                <!-- Single Item -->
+                                <div class="col-md-4 col-sm-6 equal-height">
+                                    <div class="item">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                        <h4>Porject Impliment</h4>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- End Single Item -->
+            
+                                <!-- Single Item -->
+                                <div class="col-md-4 col-sm-6 equal-height">
+                                    <div class="item">
+                                        <i class="fas fa-recycle"></i>
+                                        <h4>Software Update</h4>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- End Single Item -->
+            
+                                <!-- Single Item -->
+                                <div class="col-md-4 col-sm-6 equal-height">
+                                    <div class="item">
+                                        <i class="fas fa-headset"></i>
+                                        <h4>24/7 Support</h4>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- End Single Item -->
+                            </div>
+                    </div>
+                </section>
             </section>
+            <section id="about-us-brief">
+                <h2>Nuestra Pasión por la Aventura</h2>
+                <p>
+                  Somos cuatro amigos apasionados por descubrir la montaña, ya sea a pie o en bicicleta. Nuestro compromiso es ayudarte a explorar rutas únicas, llenas de historia, cultura y naturaleza.
+                </p>
+                <p>
+                  Conoce a Pablo, el estratega; Héctor, el aventurero; Francisco, el experto en seguridad; y Rubén, el ciclista empedernido.
+                </p>
+                <a href="/sobre-nosotros" class="read-more-link">Conoce más &rarr;</a>
+              </section>
     </main>
     <footer>
         <p>&copy; 2025 OffGrid Paths. All rights reserved.</p>
