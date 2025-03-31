@@ -269,6 +269,24 @@ nav ul li a:hover {
 }
 */
 
+/* ===============================
+   Sección: Nuestras Rutas
+   =============================== */
+
+/* Contenedor principal de la sección */
+#nuestras-rutas {
+  padding: 60px 0;
+  background-color: #ffffff;
+}
+
+/* Encabezado de la sección */
+#nuestras-rutas h2 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  color: #2d572c;
+}
 /* Cartas de rutas */
 :root{
     --background-dark: #2d3548;
@@ -363,7 +381,7 @@ nav ul li a:hover {
   }
   
   .card-grid:hover > .card:not(:hover) .card__background{
-    filter: brightness(0.5) saturate(0) contrast(1.2) blur(2px);
+    filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
   }
   
   .card__content{
@@ -387,3 +405,160 @@ nav ul li a:hover {
     line-height: 1.4;
     word-spacing: 100vw;
   }
+
+  /* ===============================
+   Sección: Resumen "About Us - Brief"
+   =============================== */
+
+/* Estilo para el bloque resumen en la página principal */
+#about-us-brief {
+  margin: 2rem auto;
+  max-width: 800px;
+  padding: 2rem;
+  background-color: #e8f5e8; /* Fondo suave, verdoso */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera para profundidad */
+  text-align: center;
+}
+
+/* Título del resumen */
+#about-us-brief h2 {
+  color: #2d572c;
+  margin-bottom: 1rem;
+}
+
+/* Párrafo del resumen */
+#about-us-brief p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Enlace "Conoce más" */
+.read-more-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3c773c; /* Verde medio para el botón */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease; /* Suaviza el cambio de color */
+}
+
+.read-more-link:hover {
+  background-color: #2d572c; /* Verde más intenso al pasar el cursor */
+}
+
+/* ===============================
+   Sección: Servicios "We Offer"
+   =============================== */
+
+/* Contenedor principal de la sección */
+#our-services {
+  padding: 60px 0;
+  background-color: #ffffff;
+}
+
+/* Encabezado de la sección */
+.site-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.site-heading h2 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.site-heading h2 span {
+  color: #00a01d;
+}
+
+.site-heading h4 {
+  display: inline-block;
+  padding-bottom: 20px;
+  position: relative;
+  text-transform: capitalize;
+  z-index: 1;
+}
+
+.site-heading h4::before {
+  background: #00a01d;
+  bottom: 0;
+  content: "";
+  height: 2px;
+  left: 50%;
+  margin-left: -25px;
+  position: absolute;
+  width: 50px;
+}
+
+/* Estilo de los elementos individuales */
+.our-offer-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.our-offer-items .item {
+  background: #ffffff;
+  border-left: 2px solid #00a01d;
+  box-shadow: 0 0 10px #cccccc;
+  padding: 30px;
+  position: relative;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.our-offer-items .item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Iconos de los servicios */
+.our-offer-items .item i {
+  background: #00a01d;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 40px;
+  height: 80px;
+  line-height: 80px;
+  margin-bottom: 25px;
+  text-align: center;
+  width: 80px;
+  transition: all 0.3s ease-in-out;
+}
+
+.our-offer-items .item:hover i {
+  background: #ffffff;
+  color: #00a01d;
+  border: 2px solid #00a01d;
+}
+
+/* Títulos de los servicios */
+.our-offer-items .item h4 {
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 15px;
+}
+
+/* Descripción de los servicios */
+.our-offer-items .item p {
+  margin: 0;
+  color: #666666;
+  line-height: 1.6;
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+  .our-offer-items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .our-offer-items .item {
+    width: 100%;
+    max-width: 400px;
+  }
+}
