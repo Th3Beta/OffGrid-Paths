@@ -118,67 +118,88 @@ nav ul li a:hover {
 }
 
 /* Login and Create Account styles */
-.login-box {
-    background: rgba(0,0,0,.5);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
-    border-radius: 10px;
+.login-box, .create-box {
+  background: #ffffff;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
 }
 
-.login-box h2 {
-    margin: 0 0 30px;
-    padding: 0;
-    color: #fff;
-    text-align: center;
+/* Título */
+.login-box h2, .create-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #2d572c;
+  text-align: center;
+  font-size: 24px;
 }
 
-.login-box .user-box {
-    position: relative;
+/* Grupo de formulario - CONTENEDOR CORREGIDO */
+.user-box {
+  position: relative;
+  margin-bottom: 30px;
 }
 
-.login-box .user-box input {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
+/* Inputs - ESTILOS CORREGIDOS */
+.user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #333;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  background: transparent;
 }
 
-.login-box .user-box label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    pointer-events: none;
-    transition: .5s;
+/* Labels - POSICIÓN CORREGIDA */
+.user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #666;
+  pointer-events: none;
+  transition: 0.5s;
 }
 
-.login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {
-    top: -20px;
-    left: 0;
-    color: #24702a;
-    font-size: 12px;
+/* Efecto cuando el input está enfocado o tiene contenido */
+.user-box input:focus ~ label,
+.user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #24702a;
+  font-size: 12px;
 }
 
-.login-box form a {
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: #24702a;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: .5s;
-    margin-top: 40px;
-    letter-spacing: 4px;
+/* Botones/Enlaces - ESTILOS MEJORADOS */
+.login-box form a, .create-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #24702a;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 20px;
+  letter-spacing: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.login-box form a:hover, .create-box form a:hover {
+  background: transparent;
+  color: #000;
+  text-decoration: underline;
 }
 
 /* Slideshow */
@@ -246,28 +267,6 @@ nav ul li a:hover {
 .active, .dot:hover {
     background-color: #717171;
 }
-
-/* No se usa de momento
-.dropdownMenu {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdownMenu a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdownMenu a:hover {
-    background-color: #f1f1f1;
-}
-*/
 
 /* ===============================
    Sección: Nuestras Rutas
@@ -405,7 +404,18 @@ nav ul li a:hover {
     line-height: 1.4;
     word-spacing: 100vw;
   }
+    /* ===============================
+   Sección: Lista de servicios
+   =============================== */ 
+   ul {
+    list-style-type: none; /* Elimina los puntos o símbolos predeterminados */
+    padding: 0; /* Elimina el relleno por defecto del navegador */
+    margin: 0; /* Elimina el margen por defecto del navegador */
+  }
 
+  li {
+    margin: 5px 0; /* Añade algo de espacio entre los elementos de la lista */
+  }
   /* ===============================
    Sección: Resumen "About Us - Brief"
    =============================== */
