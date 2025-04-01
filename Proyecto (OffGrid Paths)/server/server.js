@@ -2,7 +2,9 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const mysql = require('mysql2');
 const app = express();
+const cors = require('cors');
 
+app.use(cors());
 app.use(express.json());
 
 // Conexión a la base de datos
@@ -10,7 +12,7 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'userDB'
+    database: 'OffGridPaths'
 });
 
 // --- REGISTRO ---
