@@ -60,6 +60,22 @@ nav ul li a:hover {
   height: 20px;
 }
 
+/* Icono banderas */
+.selec_flag-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: url('../images/banderas.png') no-repeat center center;
+  background-size: cover;
+}
+
+.flag-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url('../images/banderas.png') no-repeat center center;
+  background-size: cover;
+}
 
 /* Icono busqueda */
 .icono-busqueda {
@@ -247,28 +263,6 @@ nav ul li a:hover {
     background-color: #717171;
 }
 
-/* No se usa de momento
-.dropdownMenu {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdownMenu a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdownMenu a:hover {
-    background-color: #f1f1f1;
-}
-*/
-
 /* ===============================
    Sección: Nuestras Rutas
    =============================== */
@@ -405,7 +399,18 @@ nav ul li a:hover {
     line-height: 1.4;
     word-spacing: 100vw;
   }
+    /* ===============================
+   Sección: Lista de servicios
+   =============================== */ 
+   ul {
+    list-style-type: none; /* Elimina los puntos o símbolos predeterminados */
+    padding: 0; /* Elimina el relleno por defecto del navegador */
+    margin: 0; /* Elimina el margen por defecto del navegador */
+  }
 
+  li {
+    margin: 5px 0; /* Añade algo de espacio entre los elementos de la lista */
+  }
   /* ===============================
    Sección: Resumen "About Us - Brief"
    =============================== */
