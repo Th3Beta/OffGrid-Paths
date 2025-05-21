@@ -1,0 +1,33 @@
+User (UserID, Username, PasswordHash, Email)
+    CP: UserID
+    VNN: Username, PasswordHash, Email
+    Único: Username, Email
+Dominios:
+    UserID: número(3)
+    Username: cadena(50)
+    PasswordHash: cadena(255)
+    Email: cadena(100)
+
+Montana (MontanaID, Nombre, Altura, Ubicacion, Decripcion)
+    CP: MontanaID
+    VNN: Nombre, Altura, Ubicacion
+Dominios:
+    MontanaID: número(3)
+    Nombre: cadena(100)
+    Altura: número(9)
+
+Ruta (RutaID, MontanaID, Dificultad, Descripcion, Distancia)
+    CP: RutaID
+    CAj: MontanaID -> Montana
+    VNN: MontanaID, Dificultad, Distancia,
+Dominios:
+    RutaID: número(3)
+    MontanaID: número(3) [ON DELETE CASCADE]
+    Dificultad: cadena(255) [IN ('Facil, Intermedia, Dificil')]
+    Descripcion: cadena(255)
+    Distancia número(9)
+
+UsuarioRutaGuardada (UserID, RutaID)
+    CP: UserID, RutaID
+    CAj: UserID -> User
+    CAj: RutaID -> Ruta
