@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 1521,
+            "driver": "MySQL",
+            "name": "OffgridPaths",
+            "group": "Proyecto",
+            "username": "SYSTEM",
+            "database": "userDB",
+            "askForPassword": true
+        }
+    ]
+}

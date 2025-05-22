@@ -128,3 +128,68 @@ async function validateRegister(event) {
         alert('Hubo un problema al registrar el usuario. Inténtalo más tarde.');
     }
 }
+
+// Información de las rutas
+const routes = [
+  {
+      title: "Castillo de Castro",
+      description: "Ruta de senderismo en Alfondeguilla. Muy recomendada para disfrutar de vistas panorámicas.",
+      image: "images/ruta1.jpg"
+  },
+  {
+      title: "Mirador de los Poetas",
+      description: "Ruta en Las Dehesas, Madrid. Perfecta para disfrutar de la naturaleza y vistas espectaculares.",
+      image: "images/ruta3.jpg"
+  },
+  {
+      title: "Fuente Dé",
+      description: "Ruta en Cantabria con paisajes impresionantes y una experiencia inolvidable.",
+      image: "images/ruta4.jpg"
+  }
+];
+
+function openPopup(popupId) {
+  document.getElementById(popupId).style.display = "block";
+}
+
+function closePopup(popupId) {
+  document.getElementById(popupId).style.display = "none";
+}
+
+
+//
+const API_KEY = 'yAAib8KAXd1ESllvvYGEvcNlvpauxD9w';
+    const locationName = 'Alfondeguilla';
+
+    async function getWeather() {
+        try {
+            // 1. Obtener Location Key de Alfondeguilla
+            const locationRes = await fetch(`https://dataservice.accuweather.com/locations/v1/cities/search?apikey=${API_KEY}&q=${locationName}`);
+            const locationData = await locationRes.json();
+            const locationKey = locationData[0].Key;
+
+            // 2. Obtener condiciones actuales
+            const weatherRes = await fetch(`https://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${API_KEY}&language=es-es&details=true`);
+            const weatherData = await weatherRes.json();
+            const weather = weatherData[0];
+
+            // 3. Mostrar el clima
+            const container = document.getElementById('weather-container');
+            container.innerHTML = `
+                <h3>El tiempo ahora en ${locationName}</h3>
+                <p><strong>${weather.WeatherText}</strong></p>
+                <p>Temperatura: ${weather.Temperature.Metric.Value} °C</p>
+                <p>Humedad: ${weather.RelativeHumidity}%</p>
+                <p>Viento: ${weather.Wind.Speed.Metric.Value} km/h</p>
+            `;
+        } catch (error) {
+            console.error('Error al obtener el clima:', error);
+            document.getElementById('weather-container').innerText = "No se pudo cargar el tiempo.";
+        }
+    }
+
+    // Cargar clima al abrir el popup
+    function openPopup(id) {
+        document.getElementById(id).style.display = 'block';
+        getWeather(); // Llama a la función aquí
+    }
