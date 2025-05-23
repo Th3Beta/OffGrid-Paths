@@ -10,31 +10,26 @@
 </head>
 
 <body>
-<!-- BARRA DE NAVEGACIÓN -->
-<nav>
-    <ul>
-        <li><a href="#slideshow-container" class="nav-link">Home</a></li>
-        <li><a href="#about-us" class="nav-link">Our Services</a></li>
-        <li><a href="#our-services" class="nav-link">About Us</a></li>
-        <li class="search-bar">
-            <input type="text" placeholder="Search routes..." />
-            <button type="submit">
-                <img src="images/busqueda.png" alt="Search" class="icono-busqueda">
-            </button>
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav>
+        <ul>
+            <li><a href="#slideshow-container" class="nav-link">Home</a></li>
+            <li><a href="#our-services" class="nav-link">Our Services</a></li>
+            <li><a href="about us/aboutus.html" class="nav-link">About Us</a></li>
             <li>
                 <div class="language-selector">
-                    <img src="images/gb_flag.png" alt="English" onclick="changeLanguage('en')" class="selec_flag-icon">
+                    <img src="images/gb_flag.png" alt="English" onclick="changeLanguage('en')" class="flag-icon">
                     <img src="images/cat_flag.png" alt="Català" onclick="changeLanguage('ca')" class="flag-icon">
                     <img src="images/spain_flag.png" alt="Español" onclick="changeLanguage('es')" class="flag-icon">
                 </div>
             </li>
-        <li>
-            <a href="#head-login" class="nav-link" onclick="openPopup('login-popup')">
-                <img id="login-icon" src="images/inicio-sesion1.png" alt="Login" class="icono-login">
-            </a>
-        </li>
-    </ul>
-</nav>
+            <li>
+                <a href="#head-login" class="nav-link" onclick="openPopup('login-popup')">
+                    <img id="login-icon" src="images/user.png" alt="User" class="icono-login">
+                </a>
+            </li>
+        </ul>
+    </nav>
     <main>
         <!-- INICIO DE SESIÓN -->
         <div id="login-popup" class="popup">
@@ -59,7 +54,7 @@
         <div id="create-popup" class="popup">
             <div class="popup-content login-box">
                 <span class="close" onclick="closePopup('create-popup')">&times;</span>
-                <h2>Create Account</h2>
+                <h2>Sign up</h2>
                 <form>
                     <div class="user-box">
                         <input type="text" name="username" required="">
@@ -82,28 +77,28 @@
         <section id="slideshow-container">
             <div class="slideshow-container">
                 <div class="mySlides fade">
-                    <img src="./images/bici1.jpg">
+                    <img src="./images/Captura (1).png">
                 </div>
                 <div class="mySlides fade">
-                    <img src="./images/bici2.jpg">
+                    <img src="./images/Captura (2).png">
                 </div>
                 <div class="mySlides fade">
-                    <img src="./images/montaña1.jpg">
+                    <img src="./images/Captura (3).png">
                 </div>
                 <div class="mySlides fade">
-                    <img src="./images/montaña2.jpg">
+                    <img src="./images/Captura (4).png">
                 </div>
                 <div class="mySlides fade">
-                    <img src="./images/nieve1.jpg">
+                    <img src="./images/Captura (5).png">
                 </div>
                 <div class="mySlides fade">
-                    <img src="./images/nieve2.jpg">
+                    <img src="./images/Captura (6).png">
                 </div>
                 <div class="mySlides fade">
-                    <img src="./images/nieve3.jpg">
+                    <img src="./images/Captura (7).png">
                 </div>
                 <div class="mySlides fade">
-                    <img src="./images/nieve4.jpg">
+                    <img src="./images/Captura (8).png">
                 </div>
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -119,6 +114,12 @@
                 <span class="dot" onclick="currentSlide(7)"></span>
                 <span class="dot" onclick="currentSlide(8)"></span>
             </div>
+            <div class="scroll-indicator">
+                <a class="scroll-arrow" id="scrollArrow">
+                  <span class="arrow-text">More content below</span>
+                  <span class="arrow">&#8595;</span>
+                </a>
+            </div>
         </section>
         <!--La sección de las rutas-->
         <div id="nuestras-rutas">
@@ -127,155 +128,188 @@
 
             <section class="hero-section">
                 <div class="card-grid">
-                    <a class="card" href="#">
-                        <div class="card__background"
-                            style="background-image: url(images/ruta1.jpg)">
+                    <!-- Carta 1 -->
+                    <a href="#nuestras-rutas" class="card" onclick="openPopup('popup-castillo')">
+                        <div class="card__background" style="background-image: url('images/ruta1.jpg');" id="castillo">
                         </div>
                         <div class="card__content">
-                            <p class="card__category"> Alfondeguilla, Valencia (Spain)</p>
+                            <p class="card__category">Alfondeguilla, Valencia (Spain)</p>
                             <h3 class="card__heading">Castillo de Castro</h3>
-                            <!-- https://es.wikiloc.com/rutas-senderismo/subida-al-castillo-de-castro-por-el-collado-de-la-mina-bco-de-la-horteta-y-descenso-por-la-font-de-15473620 -->
                         </div>
                     </a>
-                    <a class="card" href="#">
-                        <div class="card__background"
-                            style="background-image: url(images/ruta2.jpg)">
+                    <div id="popup-castillo" class="popup">
+                        <div class="popup-content1">
+                            <span class="close" onclick="closePopup('popup-castillo')">&times;</span>
+                            <h2>Castillo de Castro</h2>
+                            <h4>Alfondeguilla, Comunidad Valenciana, Spain</h4>
+                            <div id="weather-castillo" class="weather-container"></div>
+                            <!-- Mapa con la ruta -->
+                            <iframe
+                                src="https://gpx.studio/embed?options=%7B%22token%22%3A%22pk.eyJ1Ijoia2Fyb3RoIiwiYSI6ImNtOTE2NHYydDB1dWwybnNpeDJ4b3ozbm8ifQ.xpK1q7fuFaZ_7_dQtbK-sg%22%2C%22ids%22%3A%5B%221XL_fctomkgF_cjUid332fYG339MPHE2Q%22%5D%2C%22directionMarkers%22%3Atrue%7D"
+                                width="100%" height="600px" frameborder="0" style="outline: none;">
+                            </iframe>
                         </div>
-                        <div class="card__content">
-                            <p class="card__category"> Puerto de Cotos, Castilla y León (Spain)</p>
-                            <h3 class="card__heading">Pico Peñalara</h3>
-                            <!-- https://es.wikiloc.com/rutas-senderismo/pico-penalara-2428m-circular-integral-laguna-grande-laguna-claveles-5-lagunas-laguna-de-los-pajaros-171616911 -->
-                        </div>
-                    </a>
-                    <a class="card" href="#">
-                        <div class="card__background"
-                            style="background-image: url(images/ruta3.jpg)">
-                        </div>
-                        <div class="card__content">
-                            <p class="card__category">Las Dehesas, Madrid (Spain)</p>
-                            <h3 class="card__heading">Mirador de los Poetas</h3>
-                            <!-- https://es.wikiloc.com/rutas-senderismo/pico-penalara-2428m-circular-integral-laguna-grande-laguna-claveles-5-lagunas-laguna-de-los-pajaros-171616911 -->
-                        </div>
-                        </li>
-                        <a class="card" href="#">
-                            <div class="card__background"
-                                style="background-image: url(images/ruta4.jpg)">
-                            </div>
-                            <div class="card__content">
-                                <p class="card__category">Fuente Dé, Cantabria (Spain)</p>
-                                <h3 class="card__heading">Fuente Dé</h3>
-                                <!-- https://es.wikiloc.com/rutas-senderismo/mirador-de-los-poetas-reloj-de-cela-ducha-de-los-alemanes-las-dehesas-de-cercedilla-9042913 -->
-                            </div>
-                        </a>
-                    </a>
-                </div>
-            </section>
-            <section id="our-services">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="site-heading text-center">
-                                    <h2>What <span>We Offer</span></h2>
-                                    <h4>All you need to enjoy outdoor adventures</h4>
-                                </div>
-                            </div>
-                        </div>
-                            <div class="row our-offer-items less-carousel">
-                                <!-- Single Item -->
-                                <div class="col-md-4 col-sm-6 equal-height">
-                                    <div class="item">
-                                        <i class="fas fa-pen-fancy"></i>
-                                        <h4>Interactive Maps and Guided Routes</h4>
-                                        <p>
-                                            <ul>
-                                                <li>Detailed maps featuring elevation profiles, key spots, and difficulty ratings.</li>
-                                                <li>Live GPS tracking</li>
-                                            </ul>                                            
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- End Single Item -->
-            
-                                <!-- Single Item -->
-                                <div class="col-md-4 col-sm-6 equal-height">
-                                    <div class="item">
-                                        <i class="fas fa-dharmachakra"></i>
-                                        <h4>Route Classification</h4>
-                                        <ul>
-                                            <li>Filter routes by difficulty (easy, intermediate, advanced).</li>
-                                            <li>Classify by duration or distance.</li>
-                                        </ul>  
-                                    </div>
-                                </div>
-                                <!-- End Single Item -->
-            
-                                <!-- Single Item -->
-                                <div class="col-md-4 col-sm-6 equal-height">
-                                    <div class="item">
-                                        <i class="fas fa-tasks"></i>
-                                        <h4>Route Classification</h4>
-                                        <ul>
-                                            <li>Filter routes by difficulty (easy, intermediate, advanced).</li>
-                                            <li>Classify by duration or distance.</li>
-                                        </ul>  
-                                    </div>
-                                </div>
-                                <!-- End Single Item -->
-            
-                                <!-- Single Item -->
-                                <div class="col-md-4 col-sm-6 equal-height">
-                                    <div class="item">
-                                        <i class="fas fa-tachometer-alt"></i>
-                                        <h4>Ratings and Opinions from Our Users</h4>
-                                        <ul>
-                                            <li>Space for users to write comments and ratings about routes.</li>
-                                            <li>Advises based on real experiences.</li>
-                                        </ul>  
-                                    </div>
-                                </div>
-                                <!-- End Single Item -->
-            
-                                <!-- Single Item -->
-                                <div class="col-md-4 col-sm-6 equal-height">
-                                    <div class="item">
-                                        <i class="fas fa-recycle"></i>
-                                        <h4>Online Store</h4>
-                                        <ul>
-                                            <li>Sale of hiking-related products.</li>
-                                            <li>Hiking gear and services rental.</li>
-                                        </ul>  
-                                    </div>
-                                </div>
-                                <!-- End Single Item -->
-            
-                                <!-- Single Item -->
-                                <div class="col-md-4 col-sm-6 equal-height">
-                                    <div class="item">
-                                        <i class="fas fa-headset"></i>
-                                        <h4>24/7 Assistance</h4>
-                                        <p>
-                                            <ul>
-                                                <li>Live chat to solve doubts about routes.</li>
-                                                <li>Emergency assistance during hikes.</li>
-                                            </ul>                                            
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- End Single Item -->
-                            </div>
                     </div>
-                </section>
+                    <!-- Carta 2 -->
+                    <a class="card" href="#nuestras-rutas" onclick="openPopup('popup-penalara')">
+                        <div class="card__background" style="background-image: url(images/ruta2.jpg)">
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category"> Puerto de Cotos, Castilla y León (España)</p>
+                            <h3 class="card__heading">Pico Peñalara</h3>
+                        </div>
+                    </a>
+                    <div id="popup-penalara" class="popup">
+                        <div class="popup-content1">
+                            <span class="close" onclick="closePopup('popup-penalara')">&times;</span>
+                            <h2>Pico Peñalara</h2>
+                            <h4>Puerto de Cotos, Castilla y León, España</h4>
+                            <!-- Clima -->
+                            <div id="weather-penalara" class="weather-container"></div>
+                            <!-- Mapa con la ruta -->
+                            <iframe
+                                src="https://gpx.studio/embed?options=%7B%22token%22%3A%22pk.eyJ1Ijoia2Fyb3RoIiwiYSI6ImNtOTE2NHYydDB1dWwybnNpeDJ4b3ozbm8ifQ.xpK1q7fuFaZ_7_dQtbK-sg%22%2C%22ids%22%3A%5B%221U3QukQFF4yilo1c-zrOYzw9NtTzcHYvO%22%5D%7D"
+                                width="100%" height="600px" frameborder="0" style="outline: none;" />
+                            </iframe>
+                        </div>
+                    </div>
+                    <!-- Carta 3 -->
+                    <a href="#nuestras-rutas" class="card" onclick="openPopup('popup-poetas')">
+                        <div class="card__background" style="background-image: url('images/ruta3.jpg');" id="poetas">
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category">Las Dehesas, Madrid (España)</p>
+                            <h3 class="card__heading">Mirador de los Poetas</h3>
+                        </div>
+                    </a>
+                    <div id="popup-poetas" class="popup">
+                        <div class="popup-content1">
+                            <span class="close" onclick="closePopup('popup-poetas')">&times;</span>
+                            <h2>Mirador de los Poetas</h2>
+                            <h4>Las Dehesas, Comunidad de Madrid, España</h4>
+                            <!-- Clima -->
+                            <div id="weather-poetas" class="weather-container"></div>
+                            <!-- Mapa con la ruta -->
+                            <iframe
+                                src="https://gpx.studio/embed?options=%7B%22token%22%3A%22pk.eyJ1Ijoia2Fyb3RoIiwiYSI6ImNtOTE2NHYydDB1dWwybnNpeDJ4b3ozbm8ifQ.xpK1q7fuFaZ_7_dQtbK-sg%22%2C%22ids%22%3A%5B%221qU_gnEx2nnxL3XFYNxIz1lOEJO8_0TBz%22%5D%2C%22directionMarkers%22%3Atrue%2C%22theme%22%3A%22light%22%7D"
+                                width="100%" height="600px" frameborder="0" style="outline: none;">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <!-- Carta 4 -->
+                    <a href="#nuestras-rutas" class="card" onclick="openPopup('popup-fuente')">
+                        <div class="card__background" style="background-image: url('images/ruta4.jpg');"></div>
+                        <div class="card__content">
+                            <p class="card__category">Fuente Dé, Cantabria</p>
+                            <h3 class="card__heading">Fuente Dé</h3>
+                        </div>
+                    </a>
+                    <div id="popup-fuente" class="popup">
+                        <div class="popup-content1">
+                            <span class="close" onclick="closePopup('popup-fuente')">&times;</span>
+                            <h2>Fuente Dé</h2>
+                            <h4>Fuente Dé, Cantabria, España</h4>
+                            <!-- Clima -->
+                            <div id="weather-fuente" class="weather-container"></div>
+                            <!-- Mapa con la ruta -->
+                            <iframe
+                                src="https://gpx.studio/embed?options=%7B%22token%22%3A%22pk.eyJ1Ijoia2Fyb3RoIiwiYSI6ImNtOTE2NHYydDB1dWwybnNpeDJ4b3ozbm8ifQ.xpK1q7fuFaZ_7_dQtbK-sg%22%2C%22ids%22%3A%5B%221YzOVm_qGyrVgDMNbeFc7Hv1ifcKLjBae%22%5D%2C%22directionMarkers%22%3Atrue%7D"
+                                width="100%" height="600px" frameborder="0" style="outline: none;">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+                </a>
             </section>
-            <section id="about-us-brief">
-                <h2>Our Passion for Adventure</h2>
-                <p>
-                  We are four friends passionate about exploring mountains, whether on foot or by bike. Our commitment is to help you exploring unique routes, full of history, culture and nature.
-                </p>
-                <p>
-                  Meet Pablo, the strategist; Héctor, the adventurer; Francisco, the expert in security; and Rubén, the avid cyclist.
-                </p>
-                <a href="about us/aboutus_eng.html" class="read-more-link">Know more &rarr;</a>
-              </section>
+        </div>
+        <section id="our-services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-heading text-center">
+                            <We>What <span>We Offer</span></h2>
+                            <h4>All you need to enjoy outdoor adventures</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row our-offer-items less-carousel">
+                    <!-- Single Item -->
+                    <div class="col-md-4 col-sm-6 equal-height">
+                        <div class="item">
+                            <i class="fas fa-pen-fancy"></i>
+                            <h4>Interactive Maps and Guided Routes</h4>
+                            <ul>
+                                <li>Detailed maps featuring elevation profiles, key spots, and difficulty ratings.</li>
+                                <li>Live GPS tracking</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 equal-height">
+                        <div class="item">
+                            <i class="fas fa-dharmachakra"></i>
+                            <h4>Route Classification</h4>
+                            <ul>
+                                <li>Filter routes by difficulty (easy, intermediate, advanced).</li>
+                                <li>Classify by duration or distance.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 equal-height">
+                        <div class="item">
+                            <i class="fas fa-tasks"></i>
+                            <h4>Fotografías y Videos de las Rutas</h4>
+                            <ul>
+                                <li>Galería visual para mostrar vistas panorámicas y puntos destacados.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End Single Item -->
+
+                    <!-- Single Item -->
+                    <div class="col-md-4 col-sm-6 equal-height">
+                        <div class="item">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <h4>Reseñas y Opiniones de Usuarios</h4>
+                            <ul>
+                                <li>Space for users to write comments and ratings about routes.</li>
+                                <li>Advises based on real experiences.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 equal-height">
+                        <div class="item">
+                            <i class="fas fa-recycle"></i>
+                            <h4>Online Store</h4>
+                            <ul>
+                                <li>Sale of hiking-related products.</li>
+                                <li>Hiking gear and services rental.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 equal-height">
+                        <div class="item">
+                            <i class="fas fa-headset"></i>
+                            <h4>24/7 Assistance</h4>
+                            <ul>
+                                <li>Live chat to solve doubts about routes.</li>
+                                <li>Emergency assistance during hikes.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="about-us-brief">
+            <h2>Our Passion for Adventure</h2>
+            <p>
+                We are four friends passionate about exploring mountains, whether on foot or by bike. Our commitment is to help you exploring unique routes, full of history, culture and nature.
+            </p>
+            <p>
+                Meet Pablo, the strategist; Héctor, the adventurer; Francisco, the expert in security; and Rubén, the avid cyclist.
+            </p>
+            <a href="about us/aboutus.html" class="read-more-link">Know more &rarr;</a>
+        </section>
     </main>
     <footer>
         <p>&copy; 2025 OffGrid Paths. All rights reserved.</p>

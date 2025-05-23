@@ -1,51 +1,123 @@
 /* General */
 body {
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-    color: #2d572c;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-    color: #2d572c;
-    text-align: center;
-  }
-  
-  p {
-    color: #444;
-    line-height: 1.8;
-    margin-bottom: 20px;
-  }
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #2d572c;
+}
 
-  /* Botones */
-.button {
+/* Títulos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  color: #2d572c;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+/* Párrafos */
+p {
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Barra de navegación */
+nav {
+  background-color: #30412b;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 50px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #22331d;
+}
+
+/* Icono banderas */
+.selec_flag-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: url('../images/banderas.png') no-repeat center center;
+  background-size: cover;
+}
+
+.flag-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url('../images/banderas.png') no-repeat center center;
+  background-size: cover;
+}
+
+/* Icono Iniciar sesión */
+.icono-login {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #3c773c;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #2d572c;
-  }
+    width: 50px;
+    height: 50px;
+    background: url('../images/user.png') no-repeat center center;
+    background-size: cover;
+}
+
+/* Botones */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3c773c;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #2d572c;
+}
 /* EQUIPO */
 
 @layer reset, base, utilities, components, layout, overrides;
 
 @property --angle {
-  syntax: '<angle>';
+  syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
 }
 
 @property --direction {
-  syntax: '<number>';
+  syntax: "<number>";
   initial-value: 1;
   inherits: true;
 }
@@ -204,7 +276,10 @@ body {
       /* Adjusts tooltip direction based on avatar position */
       /* Future improvement: Replace with the sign() CSS function when it becomes widely supported */
       /* Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/sign */
-      --direction: min(max(calc(cos((var(--angle) + var(--angle-offset))) * -100), -1), 1);
+      --direction: min(
+        max(calc(cos((var(--angle) + var(--angle-offset))) * -100), -1),
+        1
+      );
 
       /* Stack all cards in the same grid cell */
       grid-area: 1/1;
@@ -212,8 +287,14 @@ body {
       /* Based on Bramus' article, modified with inline/block ratios to create an oval shape */
       /* Source: https://web.dev/articles/css-trig-functions */
 
-      translate: calc(cos((var(--angle) + var(--angle-offset))) * var(--radius) * var(--inline-ratio))
-        calc(sin((var(--angle) + var(--angle-offset))) * var(--radius) * var(--block-ratio) * -1);
+      translate: calc(
+          cos((var(--angle) + var(--angle-offset))) * var(--radius) *
+            var(--inline-ratio)
+        )
+        calc(
+          sin((var(--angle) + var(--angle-offset))) * var(--radius) *
+            var(--block-ratio) * -1
+        );
 
       animation: adjust-angle linear 40s infinite reverse var(--animation-state);
     }
@@ -318,19 +399,166 @@ footer {
     padding: 20px 0;
     margin-top: 40px;
   }
-  
-  /* Responsivo */
-  @media (max-width: 768px) {
-    nav ul {
-      flex-direction: column;
-      height: auto;
-    }
-  
-    .section {
-      padding: 40px 10px;
-    }
-  
-    .button {
-      padding: 8px 16px;
-    }
+
+footer p {
+  color: white;
+}
+
+/* Botón del footer */
+footer button {
+  background-color: #3c773c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(44, 87, 44, 0.08);
+}
+
+footer button:hover,
+footer button:focus {
+  background-color: #2d572c;
+  transform: translateY(-2px) scale(1.04);
+  outline: none;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    height: auto;
   }
+
+  .section {
+    padding: 40px 10px;
+  }
+
+  .button {
+    padding: 8px 16px;
+  }
+}
+
+/* Pop-ups */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 110%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.popup.active {
+  display: block;
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+}
+
+.popup-content1 {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+    max-width: 1440px;
+    height: 80%;
+    max-height: 1080px;
+    position: relative;
+    overflow-y: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    color: #24702a;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Login and Create Account styles */
+.login-box {
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+
+.login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.login-box .user-box {
+    position: relative;
+}
+
+.login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.login-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #24702a;
+    font-size: 12px;
+}
+
+.login-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #24702a;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+}

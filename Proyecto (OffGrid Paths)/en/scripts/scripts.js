@@ -54,6 +54,24 @@ function showSlides(n) {
 // Pop-ups
 function openPopup(popupId) {
   document.getElementById(popupId).style.display = "block";
+    // Cargar clima según el popup que se abra
+  switch (popupId) {
+    case 'popup-castillo':
+      showWeather('Alfondeguilla,ES', 'weather-castillo');
+      break;
+    case 'popup-penalara':
+      showWeather('Rascafría,ES', 'weather-penalara');
+      break;
+    case 'popup-poetas':
+      showWeather('Cercedilla,ES', 'weather-poetas');
+      break;
+    case 'popup-fuente':
+      showWeather('Fuente Dé,ES', 'weather-fuente');
+      break;
+
+    default:
+      console.warn('No se configuró clima para este popup:', popupId);
+  }
 }
 
 function closePopup(popupId) {
@@ -129,67 +147,98 @@ async function validateRegister(event) {
     }
 }
 
-// Información de las rutas
-const routes = [
-  {
-      title: "Castillo de Castro",
-      description: "Ruta de senderismo en Alfondeguilla. Muy recomendada para disfrutar de vistas panorámicas.",
-      image: "images/ruta1.jpg"
-  },
-  {
-      title: "Mirador de los Poetas",
-      description: "Ruta en Las Dehesas, Madrid. Perfecta para disfrutar de la naturaleza y vistas espectaculares.",
-      image: "images/ruta3.jpg"
-  },
-  {
-      title: "Fuente Dé",
-      description: "Ruta en Cantabria con paisajes impresionantes y una experiencia inolvidable.",
-      image: "images/ruta4.jpg"
+
+//Clima
+const API_KEY = 'yAAib8KAXd1ESllvvYGEvcNlvpauxD9w'; // Tu clave real
+
+async function getLocationKey(city) {
+    const response = await fetch(`https://dataservice.accuweather.com/locations/v1/cities/search?apikey=${API_KEY}&q=${city}`);
+    const data = await response.json();
+    return data[0]?.Key;
+}
+
+async function getCurrentWeather(locationKey) {
+    const response = await fetch(`https://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${API_KEY}`);
+    const data = await response.json();
+    return data[0];
+}
+
+// Función reutilizable para mostrar el clima
+async function showWeather(locationName, containerId) {
+    try {
+        const locationKey = await getLocationKey(locationName);
+        const weather = await getCurrentWeather(locationKey);
+
+        document.getElementById(containerId).innerHTML = `
+            <h3>Clima actual</h3>
+            <p><strong>${weather.WeatherText}</strong></p>
+            <p>Temperatura: ${weather.Temperature.Metric.Value} °C</p>
+        `;
+    } catch (error) {
+        console.error("Error al obtener el clima:", error);
+        document.getElementById(containerId).innerHTML = `<p>No se pudo cargar el clima.</p>`;
+    }
+}
+
+/* Carrusel auto */
+(() => {
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let i;
+    const slides = document.getElementsByClassName("mySlides");
+    const dots = document.getElementsByClassName("dot");
+
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; }
+
+    for (i = 0; i < dots.length; i++) {
+      dots[i].classList.remove("active");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    if (dots[slideIndex - 1]) {
+      dots[slideIndex - 1].classList.add("active");
+    }
+
+    setTimeout(showSlides, 5000); // Cambia cada 5 segundos
   }
-];
+})();
 
-function openPopup(popupId) {
-  document.getElementById(popupId).style.display = "block";
-}
+/*Desaparicion Flecha*/
+  const scrollArrow = document.getElementById("scrollArrow");
 
-function closePopup(popupId) {
-  document.getElementById(popupId).style.display = "none";
-}
+  function hideArrow() {
+    scrollArrow.classList.add("hidden");
+  }
 
-
-//
-const API_KEY = 'yAAib8KAXd1ESllvvYGEvcNlvpauxD9w';
-    const locationName = 'Alfondeguilla';
-
-    async function getWeather() {
-        try {
-            // 1. Obtener Location Key de Alfondeguilla
-            const locationRes = await fetch(`https://dataservice.accuweather.com/locations/v1/cities/search?apikey=${API_KEY}&q=${locationName}`);
-            const locationData = await locationRes.json();
-            const locationKey = locationData[0].Key;
-
-            // 2. Obtener condiciones actuales
-            const weatherRes = await fetch(`https://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${API_KEY}&language=es-es&details=true`);
-            const weatherData = await weatherRes.json();
-            const weather = weatherData[0];
-
-            // 3. Mostrar el clima
-            const container = document.getElementById('weather-container');
-            container.innerHTML = `
-                <h3>El tiempo ahora en ${locationName}</h3>
-                <p><strong>${weather.WeatherText}</strong></p>
-                <p>Temperatura: ${weather.Temperature.Metric.Value} °C</p>
-                <p>Humedad: ${weather.RelativeHumidity}%</p>
-                <p>Viento: ${weather.Wind.Speed.Metric.Value} km/h</p>
-            `;
-        } catch (error) {
-            console.error('Error al obtener el clima:', error);
-            document.getElementById('weather-container').innerText = "No se pudo cargar el tiempo.";
-        }
+  function showArrowIfAtTop() {
+    if (window.scrollY < window.innerHeight * 0.6) {
+      scrollArrow.classList.remove("hidden");
     }
+  }
 
-    // Cargar clima al abrir el popup
-    function openPopup(id) {
-        document.getElementById(id).style.display = 'block';
-        getWeather(); // Llama a la función aquí
+  // Oculta al hacer clic en la flecha
+  scrollArrow.addEventListener("click", () => {
+    // Desplazamiento suave hacia la sección #nuestras-rutas
+    document.getElementById("nuestras-rutas").scrollIntoView({
+      behavior: 'smooth'
+    });
+    
+    // Oculta la flecha después de un tiempo
+    setTimeout(hideArrow, 1000);
+  });
+
+  // Oculta al hacer cualquier scroll hacia abajo
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 1) {
+      hideArrow();
+    } else {
+      showArrowIfAtTop();
     }
+  });
