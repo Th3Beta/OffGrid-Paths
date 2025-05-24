@@ -64,54 +64,47 @@
       </ul>
     </nav>
     <!-- INICIO DE SESIÓN -->
-    <div id="login-popup" class="popup">
-      <div class="popup-content login-box">
-        <span class="close" onclick="closePopup('login-popup')">&times;</span>
-        <h2>Iniciar Sesión</h2>
-        <form>
-          <div class="user-box">
-            <input type="text" name="username" required="" />
-            <label>Usuario</label>
-          </div>
-          <div class="user-box">
-            <input type="password" name="password" required="" />
-            <label>Contraseña</label>
-          </div>
-          <a
-            href="#"
-            onclick="closePopup('login-popup'); openPopup('create-popup');"
-            >Crear cuenta</a
-          >
-          <a href="#" onclick="validateLogin(event)">Continuar</a>
-        </form>
-      </div>
-    </div>
-    <!-- CREAR CUENTA -->
-    <div id="create-popup" class="popup">
-      <div class="popup-content login-box">
-        <span class="close" onclick="closePopup('create-popup')">&times;</span>
-        <h2>Crear Cuenta</h2>
-        <form>
-          <div class="user-box">
-            <input type="text" name="username" required="" />
-            <label>Usuario</label>
-          </div>
-          <div class="user-box">
-            <input type="text" name="email" required="" />
-            <label>Email</label>
-          </div>
-          <div class="user-box">
-            <input type="password" name="password" required="" />
-            <label>Contraseña</label>
-          </div>
-          <a
-            href="#"
-            onclick="closePopup('create-popup'); openPopup('login-popup');"
-            >Iniciar Sesión</a
-          >
-          <a href="#" onclick="validateRegister(event)">Continuar</a>
-        </form>
-      </div>
+        <div id="login-popup" class="popup">
+            <div class="popup-content login-box">
+                <span class="close" onclick="closePopup('login-popup')">&times;</span>
+                <h2>Iniciar Sesión</h2>
+                <form>
+                    <div class="user-box">
+                        <input type="text" name="username" required="">
+                        <label>Usuario</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="password" name="password" required="">
+                        <label>Contraseña</label>
+                    </div>
+                    <a href="#" onclick="closePopup('login-popup'); openPopup('create-popup');">Crear cuenta</a>
+                    <a href="#" onclick="validateLogin(event)">Continuar</a>
+                </form>
+            </div>
+        </div>
+        <!-- CREAR CUENTA -->
+        <div id="create-popup" class="popup">
+            <div class="popup-content login-box">
+                <span class="close" onclick="closePopup('create-popup')">&times;</span>
+                <h2>Crear Cuenta</h2>
+                <form>
+                    <div class="user-box">
+                        <input type="text" name="username" required="">
+                        <label>Usuario</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="text" name="email" required="">
+                        <label>Email</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="password" name="password" required="">
+                        <label>Contraseña</label>
+                    </div>
+                    <a href="#" onclick="closePopup('create-popup'); openPopup('login-popup');">Iniciar Sesión</a>
+                    <a href="#" onclick="validateRegister(event)">Continuar</a>
+                </form>
+            </div>
+        </div>
     </div>
     <header>
       <h1>About Us</h1>
