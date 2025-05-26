@@ -1,10 +1,12 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
+
 /* Barra de navegación */
 nav {
   background-color: #30412b;
@@ -59,147 +61,148 @@ nav ul li a:hover {
   background-size: cover;
 }
 
-/* Icono busqueda */
-.icono-busqueda {
+/* Icono Iniciar sesión */
+.icono-login {
   display: inline-block;
   width: 50px;
   height: 50px;
-  background: url('../images/busqueda.png') no-repeat center center;
+  background: url('../images/user.png') no-repeat center center;
   background-size: cover;
-}
-
-/* Icono Iniciar sesión */
-.icono-login {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    background: url('../images/user.png') no-repeat center center;
-    background-size: cover;
 }
 
 /* Pop-ups */
 .popup {
-    display: none;
-    position: fixed;
-    z-index: 1001;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 110%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 110%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .popup-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 400px;
-    position: relative;
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  position: relative;
 }
 
 .popup-content1 {
-    background-color: #fefefe;
-    margin: 5% auto; /* Reduce el margen superior para centrar mejor */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 100%; /* Aumenta el ancho al 90% del viewport */
-    max-width: 1440px; /* Establece un ancho máximo */
-    height: 80%; /* Aumenta la altura al 80% del viewport */
-    max-height: 1080x; /* Establece una altura máxima */
-    position: relative;
-    overflow-y: auto; /* Permite desplazamiento si el contenido es demasiado grande */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
+  background-color: #fefefe;
+  margin: 5% auto;
+  /* Reduce el margen superior para centrar mejor */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 100%;
+  /* Aumenta el ancho al 90% del viewport */
+  max-width: 1440px;
+  /* Establece un ancho máximo */
+  height: 80%;
+  /* Aumenta la altura al 80% del viewport */
+  max-height: 1080x;
+  /* Establece una altura máxima */
+  position: relative;
+  overflow-y: auto;
+  /* Permite desplazamiento si el contenido es demasiado grande */
+  border-radius: 10px;
+  /* Bordes redondeados */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  /* Sombra para profundidad */
 }
 
 .close {
-    color: #24702a;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+  color: #24702a;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* Login and Create Account styles */
 .login-box {
-    background: rgba(0,0,0,.5);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
-    border-radius: 10px;
+  background: rgba(0, 0, 0, .5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+  border-radius: 10px;
 }
 
 .login-box h2 {
-    margin: 0 0 30px;
-    padding: 0;
-    color: #fff;
-    text-align: center;
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
 }
 
 .login-box .user-box {
-    position: relative;
+  position: relative;
 }
 
 .login-box .user-box input {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
 }
 
 .login-box .user-box label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    pointer-events: none;
-    transition: .5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
 }
 
-.login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {
-    top: -20px;
-    left: 0;
-    color: #24702a;
-    font-size: 12px;
+.login-box .user-box input:focus~label,
+.login-box .user-box input:valid~label {
+  top: -20px;
+  left: 0;
+  color: #24702a;
+  font-size: 12px;
 }
 
 .login-box form a {
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: #24702a;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: .5s;
-    margin-top: 40px;
-    letter-spacing: 4px;
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #24702a;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
 }
 
 /* Slideshow */
 /* El contenedor principal del slideshow */
 .slideshow-container {
   position: relative;
-  width: 100vw;    /* 100% del ancho de la ventana */
-  height: 100vh;   /* 100% del alto de la ventana */
+  width: 100vw;
+  /* 100% del ancho de la ventana */
+  height: 100vh;
+  /* 100% del alto de la ventana */
   overflow: hidden;
 }
 
@@ -215,7 +218,24 @@ nav ul li a:hover {
 .mySlides img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Recorta si hace falta, pero no deforma */
+  object-fit: cover;
+  /* Recorta si hace falta, pero no deforma */
+}
+
+/* Logo superpuesto */
+.logo-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.7;
+  z-index: 10;
+}
+
+.logo-overlay img {
+  width: 500px;
+  /* Ajusta según tu preferencia */
+  height: auto;
 }
 
 .scroll-indicator {
@@ -240,12 +260,13 @@ nav ul li a:hover {
   cursor: pointer;
   animation: bounce 2s infinite;
   transition: opacity 0.8s ease;
-  opacity: 1; /* 🔸 visible por defecto */
+  opacity: 1;
+  /* 🔸 visible por defecto */
 }
 
 #scrollArrow.hidden {
-  opacity: 0;  
-  pointer-events: none;   
+  opacity: 0;
+  pointer-events: none;
 }
 
 .arrow {
@@ -260,12 +281,19 @@ nav ul li a:hover {
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translate(-50%, 0);
   }
+
   40% {
     transform: translate(-50%, -20px);
   }
+
   60% {
     transform: translate(-50%, -10px);
   }
@@ -296,127 +324,128 @@ nav ul li a:hover {
   text-transform: uppercase;
   color: #2d572c;
 }
-/* Cartas de rutas */
-:root{
-    --background-dark: #2d3548;
-    --text-light: rgba(255,255,255,0.6);
-    --text-lighter: rgba(255,255,255,0.9);
-    --spacing-s: 8px;
-    --spacing-m: 16px;
-    --spacing-l: 24px;
-    --spacing-xl: 32px;
-    --spacing-xxl: 64px;
-    --width-container: 1200px;
-  }
-  
-  *{
-    border: 0;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html{
-    height: 100%;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-  }
-  
-  body{
-    height: 100%;
-  }
-  
-  .hero-section{
-    align-items: flex-start;
-    background-image: linear-gradient(15deg, #ffffff 0%, #ffffff 150%);
-    display: flex;
-    min-height: 100%;
-    justify-content: center;
-    padding: var(--spacing-xxl) var(--spacing-l);
-  }
-  
-  .card-grid{
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-column-gap: var(--spacing-l);
-    grid-row-gap: var(--spacing-l);
-    max-width: var(--width-container);
-    width: 100%;
-  }
-  
-  @media(min-width: 540px){
-    .card-grid{
-      grid-template-columns: repeat(2, 1fr); 
-    }
-  }
-  
-  @media(min-width: 960px){
-    .card-grid{
-      grid-template-columns: repeat(4, 1fr); 
-    }
-  }
-  
-  .card{
-    list-style: none;
-    position: relative;
-  }
-  
-  .card:before{
-    content: '';
-    display: block;
-    padding-bottom: 150%;
-    width: 100%;
-  }
-  
-  .card__background{
-    background-size: cover;
-    background-position: center;
-    border-radius: var(--spacing-l);
-    bottom: 0;
-    filter: brightness(0.75) saturate(1.2) contrast(0.85);
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transform-origin: center;
-    transform: scale(1) translateZ(0);
-    transition: 
-      filter 200ms linear,
-      transform 200ms linear;
-  }
-  
-  .card:hover .card__background{
-    transform: scale(1.05) translateZ(0);
-  }
-  
-  .card-grid:hover > .card:not(:hover) .card__background{
-    filter: brightness(0.5) saturate(0.7) contrast(1.2) blur(1px);
-  }
-  
-  .card__content{
-    left: 0;
-    padding: var(--spacing-l);
-    position: absolute;
-    top: 0;
-  }
-  
-  .card__category{
-    color: var(--text-light);
-    font-size: 0.9rem;
-    margin-bottom: var(--spacing-s);
-    text-transform: uppercase;
-  }
-  
-  .card__heading{
-    color: var(--text-lighter);
-    font-size: 1.9rem;
-    text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
-    line-height: 1.4;
-    word-spacing: 100vw;
-  }
 
-  /*Clima*/
-  .weather-container {
+/* Cartas de rutas */
+:root {
+  --background-dark: #2d3548;
+  --text-light: rgba(255, 255, 255, 0.6);
+  --text-lighter: rgba(255, 255, 255, 0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 1200px;
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+body {
+  height: 100%;
+}
+
+.hero-section {
+  align-items: flex-start;
+  background-image: linear-gradient(15deg, #ffffff 0%, #ffffff 150%);
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 100%;
+}
+
+@media(min-width: 540px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(min-width: 960px) {
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  list-style: none;
+  position: relative;
+}
+
+.card:before {
+  content: '';
+  display: block;
+  padding-bottom: 150%;
+  width: 100%;
+}
+
+.card__background {
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--spacing-l);
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  transform: scale(1) translateZ(0);
+  transition:
+    filter 200ms linear,
+    transform 200ms linear;
+}
+
+.card:hover .card__background {
+  transform: scale(1.05) translateZ(0);
+}
+
+.card-grid:hover>.card:not(:hover) .card__background {
+  filter: brightness(0.5) saturate(0.7) contrast(1.2) blur(1px);
+}
+
+.card__content {
+  left: 0;
+  padding: var(--spacing-l);
+  position: absolute;
+  top: 0;
+}
+
+.card__category {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-s);
+  text-transform: uppercase;
+}
+
+.card__heading {
+  color: var(--text-lighter);
+  font-size: 1.9rem;
+  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+  line-height: 1.4;
+  word-spacing: 100vw;
+}
+
+/*Clima*/
+.weather-container {
   text-align: center;
   background: rgba(255, 255, 255, 0.9);
   padding: 10px 20px;
@@ -424,19 +453,24 @@ nav ul li a:hover {
   margin-bottom: 10px;
 }
 
-    /* ===============================
+/* ===============================
    Sección: Lista de servicios
-   =============================== */ 
-   ul {
-    list-style-type: none; /* Elimina los puntos o símbolos predeterminados */
-    padding: 0; /* Elimina el relleno por defecto del navegador */
-    margin: 0; /* Elimina el margen por defecto del navegador */
-  }
+   =============================== */
+ul {
+  list-style-type: none;
+  /* Elimina los puntos o símbolos predeterminados */
+  padding: 0;
+  /* Elimina el relleno por defecto del navegador */
+  margin: 0;
+  /* Elimina el margen por defecto del navegador */
+}
 
-  li {
-    margin: 5px 0; /* Añade algo de espacio entre los elementos de la lista */
-  }
-  /* ===============================
+li {
+  margin: 5px 0;
+  /* Añade algo de espacio entre los elementos de la lista */
+}
+
+/* ===============================
    Sección: Resumen "About Us - Brief"
    =============================== */
 
@@ -445,9 +479,11 @@ nav ul li a:hover {
   margin: 2rem auto;
   max-width: 800px;
   padding: 2rem;
-  background-color: #e8f5e8; /* Fondo suave, verdoso */
+  background-color: #e8f5e8;
+  /* Fondo suave, verdoso */
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera para profundidad */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  /* Sombra ligera para profundidad */
   text-align: center;
 }
 
@@ -467,15 +503,18 @@ nav ul li a:hover {
 .read-more-link {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #3c773c; /* Verde medio para el botón */
+  background-color: #3c773c;
+  /* Verde medio para el botón */
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
-  transition: background-color 0.3s ease; /* Suaviza el cambio de color */
+  transition: background-color 0.3s ease;
+  /* Suaviza el cambio de color */
 }
 
 .read-more-link:hover {
-  background-color: #2d572c; /* Verde más intenso al pasar el cursor */
+  background-color: #2d572c;
+  /* Verde más intenso al pasar el cursor */
 }
 
 /* ===============================
@@ -595,24 +634,31 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-    background-color: #30412b;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-  }
-  
+  background-color: #30412b;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  object-fit: contain;
+  vertical-align: middle;
+}
   /* Responsivo */
   @media (max-width: 768px) {
     nav ul {
       flex-direction: column;
       height: auto;
     }
-  
+
     .section {
       padding: 40px 10px;
     }
-  
+
     .button {
       padding: 8px 16px;
     }

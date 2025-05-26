@@ -6,6 +6,12 @@ body {
   padding: 0;
   background-color: #ffffff;
   color: #2d572c;
+  padding-top: 55px;
+}
+
+.main-header {
+  text-align: center;
+  padding: 2.5rem 1.5rem; /* antes 5rem 4rem */
 }
 
 /* Títulos */
@@ -19,14 +25,6 @@ h6 {
   color: #2d572c;
   text-align: center;
   margin-bottom: 18px;
-}
-
-/* Párrafos */
-p {
-  color: #444;
-  line-height: 1.8;
-  margin-bottom: 20px;
-  text-align: center;
 }
 
 /* Barra de navegación */
@@ -107,8 +105,42 @@ nav ul li a:hover {
 .button:hover {
   background-color: #2d572c;
 }
-/* EQUIPO */
 
+/* Cartas */
+.about-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.about-card {
+  background: #f9f9f9;
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+}
+
+.about-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: #2d572c;
+}
+
+.about-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* EQUIPO */
 @layer reset, base, utilities, components, layout, overrides;
 
 @property --angle {
@@ -346,14 +378,14 @@ nav ul li a:hover {
   }
 
   .avatar-img {
-    background-color: var(--surface-2);
-    block-size: 100%;
-    display: block;
-    inline-size: 100%;
-    object-fit: cover;
-    scale: var(--avatar-img-scale, 1);
-    transition: scale 0.3s ease;
-  }
+  background-color: var(--surface-2);
+  block-size: 100%;
+  display: block;
+  inline-size: 100%;
+  object-fit: cover;
+  scale: var(--avatar-img-scale, 1);
+  transition: scale 0.3s ease;
+}
 
   .tooltiptext {
     display: grid;
@@ -390,41 +422,15 @@ nav ul li a:hover {
   .team-name {
     font: var(--title);
   }
-}
 
-/* Footer */
-footer {
-    background-color: #30412b;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
+  .team-title {
+    color: #0e2510;
+    font-weight: bold;
   }
 
-footer p {
-  color: white;
-}
-
-/* Botón del footer */
-footer button {
-  background-color: #3c773c;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 12px 32px;
-  font-size: 1rem;
-  font-family: "Montserrat", sans-serif;
-  cursor: pointer;
-  margin-top: 16px;
-  transition: background 0.3s, transform 0.2s;
-  box-shadow: 0 2px 8px rgba(44, 87, 44, 0.08);
-}
-
-footer button:hover,
-footer button:focus {
-  background-color: #2d572c;
-  transform: translateY(-2px) scale(1.04);
-  outline: none;
+  .team-bio {
+    color: #0e2510;
+  }
 }
 
 /* Responsivo */
@@ -562,4 +568,44 @@ footer button:focus {
     transition: .5s;
     margin-top: 40px;
     letter-spacing: 4px;
+}
+
+/*Final no footer */
+.final-pagina {
+  text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #30412b;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+  }
+
+footer p {
+  color: white;
+}
+
+/* Botón del footer */
+footer button {
+  background-color: #3c773c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(44, 87, 44, 0.08);
+}
+
+footer button:hover,
+footer button:focus {
+  background-color: #2d572c;
+  transform: translateY(-2px) scale(1.04);
+  outline: none;
 }
