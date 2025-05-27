@@ -1,236 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      href="../images/Logo OffGrid-Paths.ico"
-      type="image/x-icon"
-    />
-    <title>About us</title>
-    <link rel="stylesheet" href="styles/styles.css" />
-  </head>
-  <body>
-    <nav>
-      <ul>
-        <li>
-          <a href="../index.html#slideshow-container" class="nav-link">Home</a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../images/Logo OffGrid-Paths.ico" type="image/x-icon" />
+  <title>Sobre nosotros</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li>
+        <a href="../index.html#slideshow-container" class="nav-link">Home</a>
+      </li>
+      <li>
+        <a href="../index.html#our-services" class="nav-link">Our Services</a>
+      </li>
+      <li><a href="aboutus.html" class="nav-link">About Us</a></li>
+      <li>
+        <div class="language-selector">
+          <img src="../images/gb_flag.png" alt="English" onclick="changeLanguage('en')" class="selec_flag-icon" />
+          <img src="../images/cat_flag.png" alt="Català" onclick="changeLanguage('ca')" class="flag-icon" />
+          <img src="../images/spain_flag.png" alt="Español" onclick="changeLanguage('es')" class="flag-icon" />
+        </div>
+      </li>
+      <li>
+        <a href="#head-login" class="nav-link" onclick="openPopup('login-popup')">
+          <img id="login-icon" src="../images/user.png" alt="Login" class="icono-login" />
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- INICIO DE SESIÓN -->
+  <div id="login-popup" class="popup">
+    <div class="popup-content login-box">
+      <span class="close" onclick="closePopup('login-popup')">&times;</span>
+      <h2>Log in</h2>
+      <form>
+        <div class="user-box">
+          <input type="text" name="username" required="">
+          <label>Log in</label>
+        </div>
+        <div class="user-box">
+          <input type="password" name="password" required="">
+          <label>Password</label>
+        </div>
+        <a href="#" onclick="closePopup('login-popup'); openPopup('create-popup');">Register</a>
+        <a href="#" onclick="validateLogin(event)">Continue</a>
+      </form>
+    </div>
+  </div>
+  <!-- CREAR CUENTA -->
+  <div id="create-popup" class="popup">
+    <div class="popup-content login-box">
+      <span class="close" onclick="closePopup('create-popup')">&times;</span>
+      <h2>Register</h2>
+      <form>
+        <div class="user-box">
+          <input type="text" name="username" required="">
+          <label>User</label>
+        </div>
+        <div class="user-box">
+          <input type="text" name="email" required="">
+          <label>Email</label>
+        </div>
+        <div class="user-box">
+          <input type="password" name="password" required="">
+          <label>Password</label>
+        </div>
+        <a href="#" onclick="closePopup('create-popup'); openPopup('login-popup');">Log in</a>
+        <a href="#" onclick="validateRegister(event)">Continue</a>
+      </form>
+    </div>
+  </div>
+  </div>
+  <header class="main-header">
+    <h1>About Us</h1>
+  </header>
+  <section class="about-cards">
+    <div class="about-card">
+      <h3>Who we are</h3>
+      <p>
+        We are <b>Francisco "Kiko", Rubén, Héctor and Pablo</b>. Four lifelong friends who share the same passion: the mountains. <b>Vista el Senderista</b>, our faithful canine companion, is always by our side. What began as a way to unwind has become a way of life.
+      </p>
+    </div>
+    <div class="about-card">
+      <h3>What we do</h3>
+      <p>
+        We travel mountain trails and document them from real experience. We upload routes we've done ourselves, along with everything they entail: crumpled maps, unique landscapes, and unforgettable anecdotes.
+      </p>
+    </div>
+    <div class="about-card">
+      <h3>Why we do it</h3>
+      <p>
+        Because in the mountains, time has a different rhythm. Friendships are forged there, limits are challenged, and stories are found that aren't seen on social media. Hiking together transforms us, and we want to share that experience.
+      </p>
+    </div>
+    <div class="about-card">
+      <h3>Vista el Senderista</h3>
+      <p>
+        Our dog, small and somewhat fearful, but more determined than many. Vista is an essential part of the pack. He never falls behind, and his instinct and energy have earned him respect on every journey.
+    </div>
+    <div class="about-card">
+      <h3>Our mission</h3>
+      <p>
+        To inspire others to get outside, to reconnect with nature, to walk respectfully, and to enjoy things without rushing. We don't sell perfect adventures, but real experiences, with mud, effort, and a great reward: feeling like you're exactly where you want to be.
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-wrapper">
+      <header class="header">
+        <hgroup class="hgroup">
+          <h2 class="headline">Meet Our Team!</h2>
+          <p class="tagline">A group of hiking enthusiasts</p>
+        </hgroup>
+      </header>
+      <!-- nth-siblings = Total cards count - 1; update this whenever you add/remove a card  -->
+      <ul class="cards" style="--nth-siblings: 4">
+        <li class="card" style="--nth-child: 1">
+          <a href="#" class="avatar-link-wrapper">
+            <div class="visual">
+              <img class="avatar-img"
+                src="../../images/pablo.jpg"
+                width="144" height="144" alt="Ethan B., DevOps Engineer" />
+            </div>
+            <div class="tooltiptext">
+              <h3 class="team-name">Pablo E.</h3>
+              <div class="team-content-wrapper">
+                <p class="team-title">DevOps Engineer</p>
+                <p class="team-bio">
+                  Master of servers, pipelines, and keeping things running smoothly.
+                </p>
+              </div>
+            </div>
+          </a>
         </li>
-        <li>
-          <a href="../index.html#our-services" class="nav-link">Our Services</a>
+        <li class="card" style="--nth-child: 2">
+          <a href="#" class="avatar-link-wrapper">
+            <div class="visual">
+              <img class="avatar-img"
+                src="../../images/hector.jpg"
+                width="144" height="144" alt="Ava L., UI/UX Designer" />
+            </div>
+            <div class="tooltiptext">
+              <h3 class="team-name">Héctor M.</h3>
+              <div class="team-content-wrapper">
+                <p class="team-title">UI/UX Designer</p>
+                <p class="team-bio">
+                  Turning ideas into stunning designs, one pixel at a time.
+                </p>
+              </div>
+            </div>
+          </a>
         </li>
-        <li><a href="aboutus.html" class="nav-link">About Us</a></li>
-        <li>
-          <div class="language-selector">
-            <img
-              src="../images/gb_flag.png"
-              alt="English"
-              onclick="changeLanguage('en')"
-              class="selec_flag-icon"
-            />
-            <img
-              src="../images/cat_flag.png"
-              alt="Català"
-              onclick="changeLanguage('ca')"
-              class="flag-icon"
-            />
-            <img
-              src="../images/spain_flag.png"
-              alt="Español"
-              onclick="changeLanguage('es')"
-              class="flag-icon"
-            />
-          </div>
+        <li class="card" style="--nth-child: 3">
+          <a href="#" class="avatar-link-wrapper">
+            <div class="visual">
+              <img class="avatar-img"
+                src="../../images/kiko.jpg"
+                width="144" height="144" alt="Liam J., Mobile Developer" />
+            </div>
+            <div class="tooltiptext">
+              <h3 class="team-name">Francisco C.</h3>
+              <div class="team-content-wrapper">
+                <p class="team-title">Mobile Developer</p>
+                <p class="team-bio">
+                  Crafting sleek, intuitive apps for users on the go.
+                </p>
+              </div>
+            </div>
+          </a>
         </li>
-        <li>
-          <a
-            href="#head-login"
-            class="nav-link"
-            onclick="openPopup('login-popup')"
-          >
-            <img
-              id="login-icon"
-              src="../images/user.png"
-              alt="Login"
-              class="icono-login"
-            />
+        <li class="card" style="--nth-child: 4">
+          <a href="#" class="avatar-link-wrapper">
+            <div class="visual">
+              <img class="avatar-img"
+                src="../../images/ruben.jpg"
+                width="144" height="144" alt="Sophia K., Data Scientist" />
+            </div>
+            <div class="tooltiptext">
+              <h3 class="team-name">Rubén C.</h3>
+              <div class="team-content-wrapper">
+                <p class="team-title">Data Scientist</p>
+                <p class="team-bio">
+                  Decoding patterns and finding insights in the chaos.
+                </p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="card" style="--nth-child: 5">
+          <a href="#" class="avatar-link-wrapper">
+            <div class="visual">
+              <img class="avatar-img" src="../../about us/images/BlueDog.jpg" alt="Agallas">
+            </div>
+            <div class="tooltiptext">
+              <h3 class="team-name">Vista el Senderista</h3>
+              <div class="team-content-wrapper">
+                <p class="team-title">Moral support</p>
+                <p class="team-bio">
+                  Fearful but loyal. Always alert, always with us.
+                </p>
+              </div>
+            </div>
           </a>
         </li>
       </ul>
-    </nav>
-    <!-- INICIO DE SESIÓN -->
-    <div id="login-popup" class="popup">
-      <div class="popup-content login-box">
-        <span class="close" onclick="closePopup('login-popup')">&times;</span>
-        <h2>Log in</h2>
-        <form>
-          <div class="user-box">
-            <input type="text" name="username" required="" />
-            <label>User</label>
-          </div>
-          <div class="user-box">
-            <input type="password" name="password" required="" />
-            <label>Password</label>
-          </div>
-          <a
-            href="#"
-            onclick="closePopup('login-popup'); openPopup('create-popup');"
-            >Register</a
-          >
-          <a href="#" onclick="validateLogin(event)">Continue</a>
-        </form>
-      </div>
     </div>
-    <!-- CREAR CUENTA -->
-    <div id="create-popup" class="popup">
-      <div class="popup-content login-box">
-        <span class="close" onclick="closePopup('create-popup')">&times;</span>
-        <h2>Register</h2>
-        <form>
-          <div class="user-box">
-            <input type="text" name="username" required="" />
-            <label>User</label>
-          </div>
-          <div class="user-box">
-            <input type="text" name="email" required="" />
-            <label>Email</label>
-          </div>
-          <div class="user-box">
-            <input type="password" name="password" required="" />
-            <label>Password</label>
-          </div>
-          <a
-            href="#"
-            onclick="closePopup('create-popup'); openPopup('login-popup');"
-            >Log in</a
-          >
-          <a href="#" onclick="validateRegister(event)">Continuar</a>
-        </form>
-      </div>
-    </div>
-    <header>
-      <h1>About Us</h1>
-    </header>
-    <section>
-      <h2>Our Objective</h2>
-      <p>
-        We are dedicated to providing innovative solutions to help people live
-        more sustainable and independent lives. Our goal is to empower
-        individuals and communities to embrace off-grid living.
-      </p>
-      <h2>Our Team</h2>
-      <p>
-        Our team is made up of passionate professionals who are committed to
-        making a positive impact on the world. Together, we work to create
-        products and services that are aligned with our values.
-      </p>
-    </section>
-    <section class="section">
-      <div class="section-wrapper">
-        <header class="header">
-          <hgroup class="hgroup">
-            <h2 class="headline">Meet Our Team!</h2>
-            <p class="tagline">A group of hiking enthusiasts</p>
-          </hgroup>
-        </header>
-        <!-- nth-siblings = Total cards count - 1; update this whenever you add/remove a card  -->
-        <ul class="cards" style="--nth-siblings: 3">
-          <li class="card" style="--nth-child: 1">
-            <a href="#" class="avatar-link-wrapper">
-              <div class="visual">
-                <img
-                  class="avatar-img"
-                  src="https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/css-trig-functions/images/img-1.avif"
-                  width="144"
-                  height="144"
-                  alt="Ethan B., DevOps Engineer"
-                />
-              </div>
-              <div class="tooltiptext">
-                <h3 class="team-name">Pablo E.</h3>
-                <div class="team-content-wrapper">
-                  <p class="team-title">DevOps Engineer</p>
-                  <p class="team-bio">
-                    Master of servers, pipelines, and keeping things running smoothly.
-                  </p>
-                </div>
-              </div>
+  </section>
+  <section class="final-pagina">
+  <h2>Welcome to our path.</h2>
+  <p>See you at the top.</p>
+  <button id="boton_inicio" onclick="location.href='../index.html'">Back Home</button>
+  </section>
+  <footer>
+        <p>&copy; 2025 OffGrid Paths. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/offgrid_paths/">
+                <img src="../../images/instagram.png" alt="Instagram">
             </a>
-          </li>
-          <li class="card" style="--nth-child: 2">
-            <a href="#" class="avatar-link-wrapper">
-              <div class="visual">
-                <img
-                  class="avatar-img"
-                  src="https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/css-trig-functions/images/img-2.avif"
-                  width="144"
-                  height="144"
-                  alt="Ava L., UI/UX Designer"
-                />
-              </div>
-              <div class="tooltiptext">
-                <h3 class="team-name">Héctor M.</h3>
-                <div class="team-content-wrapper">
-                  <p class="team-title">UI/UX Designer</p>
-                  <p class="team-bio">
-                    Turning ideas into stunning designs, one pixel at a time.
-                  </p>
-                </div>
-              </div>
+            <a href="https://www.facebook.com">
+                <img src="../../images/facebook.png" alt="Facebook">
             </a>
-          </li>
-          <li class="card" style="--nth-child: 3">
-            <a href="#" class="avatar-link-wrapper">
-              <div class="visual">
-                <img
-                  class="avatar-img"
-                  src="https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/css-trig-functions/images/img-3.avif"
-                  width="144"
-                  height="144"
-                  alt="Liam J., Mobile Developer"
-                />
-              </div>
-              <div class="tooltiptext">
-                <h3 class="team-name">Francisco C.</h3>
-                <div class="team-content-wrapper">
-                  <p class="team-title">Mobile Developer</p>
-                  <p class="team-bio">
-                    Crafting sleek, intuitive apps for users on the go.
-                  </p>
-                </div>
-              </div>
+            <a href=" https://x.com/OffgridPaths?s=08">
+                <img src="../../images/twitter.png" alt="Twitter">
             </a>
-          </li>
-          <li class="card" style="--nth-child: 4">
-            <a href="#" class="avatar-link-wrapper">
-              <div class="visual">
-                <img
-                  class="avatar-img"
-                  src="https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/css-trig-functions/images/img-4.avif"
-                  width="144"
-                  height="144"
-                  alt="Sophia K., Data Scientist"
-                />
-              </div>
-              <div class="tooltiptext">
-                <h3 class="team-name">Rubén C.</h3>
-                <div class="team-content-wrapper">
-                  <p class="team-title">Data Scientist</p>
-                  <p class="team-bio">
-                    Decoding patterns and finding insights in the chaos.
-                  </p>
-                </div>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <footer>
-      <p>&copy; 2025 OffGrid Paths. All rights reserved.</p>
-      <button onclick="location.href='../index.html'">Back Home</button>
+        </div>
     </footer>
-    <script src="script/scripts.js"></script>
-  </body>
+  <script src="./script/scripts.js"></script>
+</body>
+
 </html>

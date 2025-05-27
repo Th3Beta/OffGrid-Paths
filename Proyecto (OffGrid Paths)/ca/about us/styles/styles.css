@@ -6,6 +6,12 @@ body {
   padding: 0;
   background-color: #ffffff;
   color: #2d572c;
+  padding-top: 55px;
+}
+
+.main-header {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
 }
 
 /* Títulos */
@@ -19,14 +25,6 @@ h6 {
   color: #2d572c;
   text-align: center;
   margin-bottom: 18px;
-}
-
-/* Párrafos */
-p {
-  color: #444;
-  line-height: 1.8;
-  margin-bottom: 20px;
-  text-align: center;
 }
 
 /* Barra de navegación */
@@ -107,8 +105,42 @@ nav ul li a:hover {
 .button:hover {
   background-color: #2d572c;
 }
-/* EQUIPO */
 
+/* Cartas */
+.about-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.about-card {
+  background: #f9f9f9;
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+}
+
+.about-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: #2d572c;
+}
+
+.about-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* EQUIPO */
 @layer reset, base, utilities, components, layout, overrides;
 
 @property --angle {
@@ -191,8 +223,6 @@ nav ul li a:hover {
 
     /* lg-n-above */
     @media (width >=1024px) {
-      /* Placing header and cards in the same grid cell to stack them */
-      /* Both elements use grid-area: 1/1 to overlap within the same area */
       grid-area: 1/1;
     }
   }
@@ -247,15 +277,12 @@ nav ul li a:hover {
       --animation-state: running;
 
       display: grid;
-      /* Placing header and cards in the same grid cell to stack them */
-      /* Both elements use grid-area: 1/1 to overlap within the same area */
       grid-area: 1/1;
       min-block-size: 700px;
       place-items: center;
 
       &:has(.avatar-link-wrapper:is(:hover, :focus-visible, :active)) {
         --animation-state: paused;
-        /* Reduces opacity of non-hovered avatars to create a layered effect */
         --avatar-opacity: 0.4;
       }
     }
@@ -270,24 +297,12 @@ nav ul li a:hover {
       --offset-per-child: calc(360deg / (var(--nth-siblings) + 1));
       --angle-offset: calc(var(--nth-child) * var(--offset-per-child));
       --inline-ratio: 1/1;
-      /* Keeps the horizontal scaling unchanged */
       --block-ratio: 1/2;
-      /* Reduces vertical scaling, making it an oval */
-
-      /* Adjusts tooltip direction based on avatar position */
-      /* Future improvement: Replace with the sign() CSS function when it becomes widely supported */
-      /* Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/sign */
       --direction: min(
         max(calc(cos((var(--angle) + var(--angle-offset))) * -100), -1),
         1
       );
-
-      /* Stack all cards in the same grid cell */
       grid-area: 1/1;
-
-      /* Based on Bramus' article, modified with inline/block ratios to create an oval shape */
-      /* Source: https://web.dev/articles/css-trig-functions */
-
       translate: calc(
           cos((var(--angle) + var(--angle-offset))) * var(--radius) *
             var(--inline-ratio)
@@ -346,14 +361,14 @@ nav ul li a:hover {
   }
 
   .avatar-img {
-    background-color: var(--surface-2);
-    block-size: 100%;
-    display: block;
-    inline-size: 100%;
-    object-fit: cover;
-    scale: var(--avatar-img-scale, 1);
-    transition: scale 0.3s ease;
-  }
+  background-color: var(--surface-2);
+  block-size: 100%;
+  display: block;
+  inline-size: 100%;
+  object-fit: cover;
+  scale: var(--avatar-img-scale, 1);
+  transition: scale 0.3s ease;
+}
 
   .tooltiptext {
     display: grid;
@@ -362,9 +377,6 @@ nav ul li a:hover {
     /* lg-n-above */
     @media (width >=1024px) {
       position: absolute;
-      /* Adjusts tooltip placement based on avatar position */
-      /* Moves the tooltip to the left or right depending on the avatar's location */
-      /* --direction is either 1 (right) or -1 (left) */
       max-inline-size: 20ch;
       opacity: var(--tooltip-opacity);
       transition-duration: 0.3s;
@@ -372,14 +384,8 @@ nav ul li a:hover {
       transition-timing-function: ease;
       translate: 110% 0;
       visibility: var(--tooltip-visibility);
-
-      /* make the tooltips non-interactive */
       pointer-events: none;
       user-select: none;
-
-      /* Adjusts text alignment based on avatar position */
-      /* Ensures the tooltip text aligns properly when shifted left or right */
-      /* Adjust text alignment and translation for direction -1 */
       [style*="--direction: -1"] {
         text-align: end;
         translate: -110% 0;
@@ -390,41 +396,15 @@ nav ul li a:hover {
   .team-name {
     font: var(--title);
   }
-}
 
-/* Footer */
-footer {
-    background-color: #30412b;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
+  .team-title {
+    color: #0e2510;
+    font-weight: bold;
   }
 
-footer p {
-  color: white;
-}
-
-/* Botón del footer */
-footer button {
-  background-color: #3c773c;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 12px 32px;
-  font-size: 1rem;
-  font-family: "Montserrat", sans-serif;
-  cursor: pointer;
-  margin-top: 16px;
-  transition: background 0.3s, transform 0.2s;
-  box-shadow: 0 2px 8px rgba(44, 87, 44, 0.08);
-}
-
-footer button:hover,
-footer button:focus {
-  background-color: #2d572c;
-  transform: translateY(-2px) scale(1.04);
-  outline: none;
+  .team-bio {
+    color: #0e2510;
+  }
 }
 
 /* Responsivo */
@@ -562,4 +542,52 @@ footer button:focus {
     transition: .5s;
     margin-top: 40px;
     letter-spacing: 4px;
+}
+
+/*Final no footer */
+.final-pagina {
+  text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #30412b;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+  }
+
+footer p {
+  color: white;
+}
+
+/* Botón del footer */
+#boton_inicio {
+  background-color: #3c773c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(44, 87, 44, 0.08);
+}
+
+#boton_inicio:hover,
+#boton_inicio:focus {
+  background-color: #2d572c;
+  transform: translateY(-2px) scale(1.04);
+  outline: none;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  object-fit: contain;
+  vertical-align: middle;
 }

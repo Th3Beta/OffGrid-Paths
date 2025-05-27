@@ -72,49 +72,46 @@ nav ul li a:hover {
 
 /* Pop-ups */
 .popup {
-  display: none;
-  position: fixed;
-  z-index: 1001;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 110%;
-  overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 110%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
 }
 
 .popup-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 400px;
-  position: relative;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
 }
 
 .popup-content1 {
-  background-color: #fefefe;
-  margin: 5% auto;
-  /* Reduce el margen superior para centrar mejor */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 100%;
-  /* Aumenta el ancho al 90% del viewport */
-  max-width: 1440px;
-  /* Establece un ancho máximo */
-  height: 80%;
-  /* Aumenta la altura al 80% del viewport */
-  max-height: 1080x;
-  /* Establece una altura máxima */
-  position: relative;
-  overflow-y: auto;
-  /* Permite desplazamiento si el contenido es demasiado grande */
-  border-radius: 10px;
-  /* Bordes redondeados */
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-  /* Sombra para profundidad */
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%; 
+    max-width: 1440px; 
+    height: 80%; 
+    max-height: 1080x; 
+    position: relative;
+    overflow-y: auto; 
+    border-radius: 10px; 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); 
+}
+
+.popup-content1 h2 {
+  color:  #2d572c;
+  text-align: center;
 }
 
 .close {
@@ -200,9 +197,7 @@ nav ul li a:hover {
 .slideshow-container {
   position: relative;
   width: 100vw;
-  /* 100% del ancho de la ventana */
   height: 100vh;
-  /* 100% del alto de la ventana */
   overflow: hidden;
 }
 
@@ -219,7 +214,6 @@ nav ul li a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Recorta si hace falta, pero no deforma */
 }
 
 /* Logo superpuesto */
@@ -234,7 +228,6 @@ nav ul li a:hover {
 
 .logo-overlay img {
   width: 500px;
-  /* Ajusta según tu preferencia */
   height: auto;
 }
 
@@ -261,7 +254,6 @@ nav ul li a:hover {
   animation: bounce 2s infinite;
   transition: opacity 0.8s ease;
   opacity: 1;
-  /* 🔸 visible por defecto */
 }
 
 #scrollArrow.hidden {
@@ -299,11 +291,6 @@ nav ul li a:hover {
   }
 }
 
-
-/* ===============================
-   Sección: Nuestras Rutas
-   =============================== */
-
 /* Contenedor principal de la sección */
 #nuestras-rutas {
   padding: 100px 0;
@@ -311,7 +298,7 @@ nav ul li a:hover {
 }
 
 /* Encabezado de la sección */
-#nuestras-rutas h2 {
+#nuestras-rutas h1 {
   text-align: center;
   font-weight: 700;
   text-transform: uppercase;
@@ -326,126 +313,126 @@ nav ul li a:hover {
 }
 
 /* Cartas de rutas */
-:root {
-  --background-dark: #2d3548;
-  --text-light: rgba(255, 255, 255, 0.6);
-  --text-lighter: rgba(255, 255, 255, 0.9);
-  --spacing-s: 8px;
-  --spacing-m: 16px;
-  --spacing-l: 24px;
-  --spacing-xl: 32px;
-  --spacing-xxl: 64px;
-  --width-container: 1200px;
-}
-
-* {
-  border: 0;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  height: 100%;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-}
-
-body {
-  height: 100%;
-}
-
-.hero-section {
-  align-items: flex-start;
-  background-image: linear-gradient(15deg, #ffffff 0%, #ffffff 150%);
-  display: flex;
-  min-height: 100%;
-  justify-content: center;
-  padding: var(--spacing-xxl) var(--spacing-l);
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-column-gap: var(--spacing-l);
-  grid-row-gap: var(--spacing-l);
-  max-width: var(--width-container);
-  width: 100%;
-}
-
-@media(min-width: 540px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
+:root{
+    --background-dark: #2d3548;
+    --text-light: rgba(255,255,255,0.6);
+    --text-lighter: rgba(255,255,255,0.9);
+    --spacing-s: 8px;
+    --spacing-m: 16px;
+    --spacing-l: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 64px;
+    --width-container: 1200px;
   }
-}
-
-@media(min-width: 960px) {
-  .card-grid {
-    grid-template-columns: repeat(4, 1fr);
+  
+  *{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-}
+  
+  html{
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+  }
+  
+  body{
+    height: 100%;
+  }
+  
+  .hero-section{
+    align-items: flex-start;
+    background-image: linear-gradient(15deg, #ffffff 0%, #ffffff 150%);
+    display: flex;
+    min-height: 100%;
+    justify-content: center;
+    padding: var(--spacing-xxl) var(--spacing-l);
+  }
+  
+  .card-grid{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: var(--spacing-l);
+    grid-row-gap: var(--spacing-l);
+    max-width: var(--width-container);
+    width: 100%;
+  }
+  
+  @media(min-width: 540px){
+    .card-grid{
+      grid-template-columns: repeat(2, 1fr); 
+    }
+  }
+  
+  @media(min-width: 960px){
+    .card-grid{
+      grid-template-columns: repeat(4, 1fr); 
+    }
+  }
+  
+  .card{
+    list-style: none;
+    position: relative;
+  }
+  
+  .card:before{
+    content: '';
+    display: block;
+    padding-bottom: 150%;
+    width: 100%;
+  }
+  
+  .card__background{
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--spacing-l);
+    bottom: 0;
+    filter: brightness(0.75) saturate(1.2) contrast(0.85);
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform-origin: center;
+    transform: scale(1) translateZ(0);
+    transition: 
+      filter 200ms linear,
+      transform 200ms linear;
+  }
+  
+  .card:hover .card__background{
+    transform: scale(1.05) translateZ(0);
+  }
+  
+  .card-grid:hover > .card:not(:hover) .card__background{
+    filter: brightness(0.5) saturate(0.7) contrast(1.2) blur(1px);
+  }
+  
+  .card__content{
+    left: 0;
+    padding: var(--spacing-l);
+    position: absolute;
+    top: 0;
+  }
+  
+  .card__category{
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-s);
+    text-transform: uppercase;
+  }
+  
+  .card__heading{
+    color: var(--text-lighter);
+    font-size: 1.9rem;
+    text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+    line-height: 1.4;
+    word-spacing: 100vw;
+  }
 
-.card {
-  list-style: none;
-  position: relative;
-}
-
-.card:before {
-  content: '';
-  display: block;
-  padding-bottom: 150%;
-  width: 100%;
-}
-
-.card__background {
-  background-size: cover;
-  background-position: center;
-  border-radius: var(--spacing-l);
-  bottom: 0;
-  filter: brightness(0.75) saturate(1.2) contrast(0.85);
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transform-origin: center;
-  transform: scale(1) translateZ(0);
-  transition:
-    filter 200ms linear,
-    transform 200ms linear;
-}
-
-.card:hover .card__background {
-  transform: scale(1.05) translateZ(0);
-}
-
-.card-grid:hover>.card:not(:hover) .card__background {
-  filter: brightness(0.5) saturate(0.7) contrast(1.2) blur(1px);
-}
-
-.card__content {
-  left: 0;
-  padding: var(--spacing-l);
-  position: absolute;
-  top: 0;
-}
-
-.card__category {
-  color: var(--text-light);
-  font-size: 0.9rem;
-  margin-bottom: var(--spacing-s);
-  text-transform: uppercase;
-}
-
-.card__heading {
-  color: var(--text-lighter);
-  font-size: 1.9rem;
-  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
-  line-height: 1.4;
-  word-spacing: 100vw;
-}
-
-/*Clima*/
-.weather-container {
+  /*Clima*/
+  .weather-container {
   text-align: center;
   background: rgba(255, 255, 255, 0.9);
   padding: 10px 20px;
@@ -453,26 +440,15 @@ body {
   margin-bottom: 10px;
 }
 
-/* ===============================
-   Sección: Lista de servicios
-   =============================== */
 ul {
   list-style-type: none;
-  /* Elimina los puntos o símbolos predeterminados */
   padding: 0;
-  /* Elimina el relleno por defecto del navegador */
   margin: 0;
-  /* Elimina el margen por defecto del navegador */
 }
 
 li {
   margin: 5px 0;
-  /* Añade algo de espacio entre los elementos de la lista */
 }
-
-/* ===============================
-   Sección: Resumen "About Us - Brief"
-   =============================== */
 
 /* Estilo para el bloque resumen en la página principal */
 #about-us-brief {
@@ -480,10 +456,8 @@ li {
   max-width: 800px;
   padding: 2rem;
   background-color: #e8f5e8;
-  /* Fondo suave, verdoso */
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  /* Sombra ligera para profundidad */
   text-align: center;
 }
 
@@ -509,17 +483,11 @@ li {
   text-decoration: none;
   border-radius: 4px;
   transition: background-color 0.3s ease;
-  /* Suaviza el cambio de color */
 }
 
 .read-more-link:hover {
   background-color: #2d572c;
-  /* Verde más intenso al pasar el cursor */
 }
-
-/* ===============================
-   Sección: Servicios "We Offer"
-   =============================== */
 
 /* Contenedor principal de la sección */
 #our-services {

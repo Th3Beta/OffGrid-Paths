@@ -1,243 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      href="../images/Logo OffGrid-Paths.ico"
-      type="image/x-icon"
-    />
-    <title>Sobre Nosaltres</title>
-    <link rel="stylesheet" href="styles/styles.css" />
-  </head>
-  <body>
-    <nav>
-      <ul>
-        <li>
-          <a href="../index.html#slideshow-container" class="nav-link">Inici</a>
+<html lang="ca">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../images/Logo OffGrid-Paths.ico" type="image/x-icon" />
+  <title>Sobre Nosaltres</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li>
+        <a href="../index.html#slideshow-container" class="nav-link">Inici</a>
+      </li>
+      <li>
+        <a href="../index.html#our-services" class="nav-link">Els Nostres Serveis</a>
+      </li>
+      <li><a href="aboutus.html" class="nav-link">Sobre Nosaltres</a></li>
+      <li>
+        <div class="language-selector">
+          <img src="../images/gb_flag.png" alt="English" onclick="changeLanguage('en')" class="flag-icon" />
+          <img src="../images/cat_flag.png" alt="Català" onclick="changeLanguage('ca')" class="selec_flag-icon" />
+          <img src="../images/spain_flag.png" alt="Español" onclick="changeLanguage('es')" class="flag-icon" />
+        </div>
+      </li>
+      <li>
+        <a href="#head-login" class="nav-link" onclick="openPopup('login-popup')">
+          <img id="login-icon" src="../images/user.png" alt="Login" class="icono-login" />
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- INICIO DE SESIÓN -->
+  <div id="login-popup" class="popup">
+    <div class="popup-content login-box">
+      <span class="close" onclick="closePopup('login-popup')">&times;</span>
+      <h2>Iniciar Sessió</h2>
+      <form>
+        <div class="user-box">
+          <input type="text" name="username" required="">
+          <label>Usuari</label>
+        </div>
+        <div class="user-box">
+          <input type="password" name="password" required="">
+          <label>Contrasenya</label>
+        </div>
+        <a href="#" onclick="closePopup('login-popup'); openPopup('create-popup');">Registrar-se</a>
+        <a href="#" onclick="validateLogin(event)">Continuar</a>
+      </form>
+    </div>
+  </div>
+  <!-- CREAR CUENTA -->
+  <div id="create-popup" class="popup">
+    <div class="popup-content login-box">
+      <span class="close" onclick="closePopup('create-popup')">&times;</span>
+      <h2>Registrar-se</h2>
+      <form>
+        <div class="user-box">
+          <input type="text" name="username" required="">
+          <label>Usuari</label>
+        </div>
+        <div class="user-box">
+          <input type="text" name="email" required="">
+          <label>Email</label>
+        </div>
+        <div class="user-box">
+          <input type="password" name="password" required="">
+          <label>Contrasenya</label>
+        </div>
+        <a href="#" onclick="closePopup('create-popup'); openPopup('login-popup');">Iniciar Sessió</a>
+        <a href="#" onclick="validateRegister(event)">Continuar</a>
+      </form>
+    </div>
+  </div>
+  </div>
+  <header class="main-header">
+    <h1>Sobre Nosaltres</h1>
+  </header>
+  <section class="about-cards">
+    <div class="about-card">
+      <h3>Qui som</h3>
+      <p>
+        Som <b>Francisco "Kiko", Rubén, Héctor i Pablo</b>. Quatre amics de tota la vida que comparteixen la mateixa passió: la muntanya. <b>Vista el Senderista</b>, el nostre fidel company caní, sempre està al nostre costat. El que va començar com una manera de relaxar-se s'ha convertit en una forma de vida.
+      </p>
+    </div>
+    <div class="about-card">
+      <h3>El que fem</h3>
+      <p>
+        Recorrem senders de muntanya i els documentem des de l'experiència real. Pugem rutes que hem fet nosaltres mateixos, juntament amb tot el que comporten: mapes arrugats, paisatges únics i anècdotes inoblidables.
+      </p>
+    </div>
+    <div class="about-card">
+      <h3>Per què ho fem</h3>
+      <p>
+        Perquè a la muntanya el temps té un altre ritme. S'hi forgen amistats, es qüestionen els límits i es troben històries que no es veuen a les xarxes socials. El senderisme junts ens transforma, i volem compartir aquesta experiència.
+      </p>
+    </div>
+    <div class="about-card">
+      <h3>Vista el Senderista</h3>
+      <p>
+        El nostre gos, petit i una mica atemorit, però més decidit que molts. Vista és una part essencial del paquet. Mai es queda enrere, i el seu instint i energia li han valgut el respecte en cada viatge.
+    </div>
+    <div class="about-card">
+      <h3>La nostra missió</h3>
+      <p>
+        Per inspirar als altres a sortir, a reconnectar amb la natura, a caminar amb respecte i a gaudir de les coses sense pressa. No venem aventures perfectes, sinó experiències reals, amb fang, esforç i una gran recompensa: sentir que estàs exactament on vols estar.
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-wrapper">
+      <header class="header">
+        <hgroup class="hgroup">
+          <h2 class="headline">Coneix el nostre equip!</h2>
+          <p class="tagline">Un grup d'aficionats al senderisme</p>
+        </hgroup>
+      </header>
+      <!-- nth-siblings = Total cards count - 1; update this whenever you add/remove a card  -->
+      <ul class="cards" style="--nth-siblings: 4">
+        <li class="card" style="--nth-child: 1">
+          <a href="#" class="avatar-link-wrapper">
+            <div class="visual">
+              <img class="avatar-img"
+                src="../../images/pablo.jpg"
+                width="144" height="144" alt="Ethan B., DevOps Engineer" />
+            </div>
+            <div class="tooltiptext">
+              <h3 class="team-name">Pablo E.</h3>
+              <div class="team-content-wrapper">
+                <p class="team-title">Enginyer DevOps</p>
+                <p class="team-bio">
+                  Mestre de servidors, canalitzacions i mantenir les coses funcionant sense problemes.
+                </p>
+              </div>
+            </div>
+          </a>
         </li>
-        <li>
-          <a href="../index.html#our-services" class="nav-link"
-            >Els Nostres Serveis</a
-          >
+        <li class="card" style="--nth-child: 2">
+          <a href="#" class="avatar-link-wrapper">
+            <div class="visual">
+              <img class="avatar-img"
+                src="../../images/hector.jpg"
+                width="144" height="144" alt="Ava L., UI/UX Designer" />
+            </div>
+            <div class="tooltiptext">
+              <h3 class="team-name">Héctor M.</h3>
+              <div class="team-content-wrapper">
+                <p class="team-title">Dissenyador UI/UX</p>
+                <p class="team-bio">
+                  Convertint les idees en dissenys impressionants, píxel a píxel.
+                </p>
+              </div>
+            </div>
+          </a>
         </li>
-        <li><a href="aboutus.html" class="nav-link">Sobre Nosaltres</a></li>
-        <li>
-          <div class="language-selector">
-            <img
-              src="../images/gb_flag.png"
-              alt="English"
-              onclick="changeLanguage('en')"
-              class="flag-icon"
-            />
-            <img
-              src="../images/cat_flag.png"
-              alt="Català"
-              onclick="changeLanguage('ca')"
-              class="selec_flag-icon"
-            />
-            <img
-              src="../images/spain_flag.png"
-              alt="Español"
-              onclick="changeLanguage('es')"
-              class="flag-icon"
-            />
-          </div>
+        <li class="card" style="--nth-child: 3">
+          <a href="#" class="avatar-link-wrapper">
+            <div class="visual">
+              <img class="avatar-img"
+                src="../../images/kiko.jpg"
+                width="144" height="144" alt="Liam J., Mobile Developer" />
+            </div>
+            <div class="tooltiptext">
+              <h3 class="team-name">Francisco C.</h3>
+              <div class="team-content-wrapper">
+                <p class="team-title">Desenvolupador mòbil</p>
+                <p class="team-bio">
+                  Creació d'aplicacions elegants i intuïtives per als usuaris en moviment.
+                </p>
+              </div>
+            </div>
+          </a>
         </li>
-        <li>
-          <a
-            href="#head-login"
-            class="nav-link"
-            onclick="openPopup('login-popup')"
-          >
-            <img
-              id="login-icon"
-              src="../images/user.png"
-              alt="Login"
-              class="icono-login"
-            />
+        <li class="card" style="--nth-child: 4">
+          <a href="#" class="avatar-link-wrapper">
+            <div class="visual">
+              <img class="avatar-img"
+                src="../../images/ruben.jpg"
+                width="144" height="144" alt="Sophia K., Data Scientist" />
+            </div>
+            <div class="tooltiptext">
+              <h3 class="team-name">Rubén C.</h3>
+              <div class="team-content-wrapper">
+                <p class="team-title">Científic de dades</p>
+                <p class="team-bio">
+                  Descodificar patrons i trobar idees en el caos.
+                </p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="card" style="--nth-child: 5">
+          <a href="#" class="avatar-link-wrapper">
+            <div class="visual">
+              <img class="avatar-img" src="../../about us/images/BlueDog.jpg" alt="Agallas">
+            </div>
+            <div class="tooltiptext">
+              <h3 class="team-name">Vista el Senderista</h3>
+              <div class="team-content-wrapper">
+                <p class="team-title">Suport moral</p>
+                <p class="team-bio">
+                  Temorós però lleial. Sempre alerta, sempre amb nosaltres.
+                </p>
+              </div>
+            </div>
           </a>
         </li>
       </ul>
-    </nav>
-    <!-- INICIO DE SESIÓN -->
-    <div id="login-popup" class="popup">
-      <div class="popup-content login-box">
-        <span class="close" onclick="closePopup('login-popup')">&times;</span>
-        <h2>Iniciar Sessió</h2>
-        <form>
-          <div class="user-box">
-            <input type="text" name="username" required="" />
-            <label>Usuari</label>
-          </div>
-          <div class="user-box">
-            <input type="password" name="password" required="" />
-            <label>Contrasenya</label>
-          </div>
-          <a
-            href="#"
-            onclick="closePopup('login-popup'); openPopup('create-popup');"
-            >Registrar-se</a
-          >
-          <a href="#" onclick="validateLogin(event)">Continuar</a>
-        </form>
-      </div>
     </div>
-    <!-- CREAR CUENTA -->
-    <div id="create-popup" class="popup">
-      <div class="popup-content login-box">
-        <span class="close" onclick="closePopup('create-popup')">&times;</span>
-        <h2>Registrar-se</h2>
-        <form>
-          <div class="user-box">
-            <input type="text" name="username" required="" />
-            <label>Usuari</label>
-          </div>
-          <div class="user-box">
-            <input type="text" name="email" required="" />
-            <label>Email</label>
-          </div>
-          <div class="user-box">
-            <input type="password" name="password" required="" />
-            <label>Contrasenya</label>
-          </div>
-          <a
-            href="#"
-            onclick="closePopup('create-popup'); openPopup('login-popup');"
-            >Iniciar Sessió</a
-          >
-          <a href="#" onclick="validateRegister(event)">Continuar</a>
-        </form>
-      </div>
-    </div>
-    <header>
-      <h1>Sobre Nosaltres</h1>
-    </header>
-    <section>
-      <h2>El Nostre Objectiu</h2>
-      <p>
-        Ens dediquem a proporcionar solucions innovadores per ajudar a les
-        persones a viure de manera més sostenible i independent. El nostre
-        objectiu és empoderar individus i comunitats perquè adoptin un
-        estil de vida fora de la xarxa.
-      </p>
-      <h2>El Nostre Equip</h2>
-      <p>
-        El nostre equip es compon de professionals apassionats que confien en
-        impactar de manera positiva al món. Junts, treballem per crear
-        productes i serveis que estiguin alineats amb els nostres valors.
-      </p>
-    </section>
-    <section class="section">
-      <div class="section-wrapper">
-        <header class="header">
-          <hgroup class="hgroup">
-            <h2 class="headline">Coneix el nostre Equip!</h2>
-            <p class="tagline">Uns entusiastes del món del senderisme</p>
-          </hgroup>
-        </header>
-        <!-- nth-siblings = Total cards count - 1; update this whenever you add/remove a card  -->
-        <ul class="cards" style="--nth-siblings: 3">
-          <li class="card" style="--nth-child: 1">
-            <a href="#" class="avatar-link-wrapper">
-              <div class="visual">
-                <img
-                  class="avatar-img"
-                  src="https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/css-trig-functions/images/img-1.avif"
-                  width="144"
-                  height="144"
-                  alt="Ethan B., DevOps Engineer"
-                />
-              </div>
-              <div class="tooltiptext">
-                <h3 class="team-name">Pablo E.</h3>
-                <div class="team-content-wrapper">
-                  <p class="team-title">Enginyer DevOps</p>
-                  <p class="team-bio">
-                    Expert en servidors, pipelins i en mantenir-ho tot
-                    funcionant sense problemes.
-                  </p>
-                </div>
-              </div>
+  </section>
+  <section class="final-pagina">
+  <h2>Benvinguts al nostre camí.</h2>
+  <p>Ens veiem al cim.</p>
+  <button id="boton_inicio" onclick="location.href='../index.html'">Tornar a Inici</button>
+  </section>
+  <footer>
+        <p>&copy; 2025 OffGrid Paths. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/offgrid_paths/">
+                <img src="../../images/instagram.png" alt="Instagram">
             </a>
-          </li>
-          <li class="card" style="--nth-child: 2">
-            <a href="#" class="avatar-link-wrapper">
-              <div class="visual">
-                <img
-                  class="avatar-img"
-                  src="https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/css-trig-functions/images/img-2.avif"
-                  width="144"
-                  height="144"
-                  alt="Ava L., UI/UX Designer"
-                />
-              </div>
-              <div class="tooltiptext">
-                <h3 class="team-name">Héctor M.</h3>
-                <div class="team-content-wrapper">
-                  <p class="team-title">Dissenyador de UI/UX</p>
-                  <p class="team-bio">
-                    Transformant idees en dissenys impressionants, un píxel a
-                    píxel.
-                  </p>
-                </div>
-              </div>
+            <a href="https://www.facebook.com">
+                <img src="../../images/facebook.png" alt="Facebook">
             </a>
-          </li>
-          <li class="card" style="--nth-child: 3">
-            <a href="#" class="avatar-link-wrapper">
-              <div class="visual">
-                <img
-                  class="avatar-img"
-                  src="https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/css-trig-functions/images/img-3.avif"
-                  width="144"
-                  height="144"
-                  alt="Liam J., Mobile Developer"
-                />
-              </div>
-              <div class="tooltiptext">
-                <h3 class="team-name">Francisco C.</h3>
-                <div class="team-content-wrapper">
-                  <p class="team-title">Desenvolupador mòbil</p>
-                  <p class="team-bio">
-                    Creant aplicacions elegants i intuïtives per a usuaris a
-                    moviment.
-                  </p>
-                </div>
-              </div>
+            <a href=" https://x.com/OffgridPaths?s=08">
+                <img src="../../images/twitter.png" alt="Twitter">
             </a>
-          </li>
-          <li class="card" style="--nth-child: 4">
-            <a href="#" class="avatar-link-wrapper">
-              <div class="visual">
-                <img
-                  class="avatar-img"
-                  src="https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/css-trig-functions/images/img-4.avif"
-                  width="144"
-                  height="144"
-                  alt="Sophia K., Data Scientist"
-                />
-              </div>
-              <div class="tooltiptext">
-                <h3 class="team-name">Rubén C.</h3>
-                <div class="team-content-wrapper">
-                  <p class="team-title">Científic de dades</p>
-                  <p class="team-bio">
-                    Desxifrant patrons i trobant informació valuosa al
-                    caos.
-                  </p>
-                </div>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <footer>
-      <p>&copy; 2025 OffGrid Paths. All rights reserved.</p>
-      <button onclick="location.href='../index.html'">Tornar a Inici</button>
+        </div>
     </footer>
-    <script src="./script/scripts.js"></script>
-  </body>
+  <script src="./script/scripts.js"></script>
+</body>
+
 </html>

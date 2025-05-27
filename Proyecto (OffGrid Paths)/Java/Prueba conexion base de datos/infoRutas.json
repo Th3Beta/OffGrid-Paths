@@ -3,30 +3,30 @@
         "Dificultad": "Facil",
         "Descripcion": "Caminata sencilla alrededor del Monte Fuji",
         "Distancia": 8.3,
-        "RutaID": 3
+        "RutaID": 15
     },
     {
         "Dificultad": "Intermedia",
         "Descripcion": "Ruta para escalar el Kilimanjaro",
         "Distancia": 15,
-        "RutaID": 2
+        "RutaID": 14
     },
     {
         "Dificultad": "Intermedia",
         "Descripcion": "Ruta alternativa para el Everest",
         "Distancia": 18.75,
-        "RutaID": 4
+        "RutaID": 16
     },
     {
         "Dificultad": "Dificil",
         "Descripcion": "Ruta técnica para Kilimanjaro desde el oeste",
         "Distancia": 17.2,
-        "RutaID": 5
+        "RutaID": 17
     },
     {
         "Dificultad": "Dificil",
         "Descripcion": "Ruta de ascenso técnico al Everest",
         "Distancia": 20.5,
-        "RutaID": 1
+        "RutaID": 13
     }
 ]
