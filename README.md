@@ -38,9 +38,6 @@ El proyecto está en su fase inicial de desarrollo y se espera mejorar con futur
 - Comentarios y reseñas en las rutas.
 - Un sistema de mapas interactivos.
 
-## ✉ Contacto
-Si tienes preguntas o sugerencias, puedes contactarme en **tuemail@example.com** o crear un issue en el repositorio.
-
 ---
 🏆 *¡Explora la aventura con OffGrid Paths!*
 
