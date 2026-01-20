@@ -1,4 +1,4 @@
-# OffGrid Paths - Proyecto Final de Instituto
+# OffGrid Paths - Proyecto Final 1ºDAM
 
 ## 🌍 Descripción
 OffGrid Paths es un proyecto final de instituto diseñado para proporcionar una plataforma web donde los usuarios pueden explorar rutas de montaña, ya sea caminando o en bicicleta. El objetivo de este proyecto es aplicar los conocimientos adquiridos en el curso sobre desarrollo y mejorar la experiencia del usuario en la exploración de senderos.
