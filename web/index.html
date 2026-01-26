@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OffGrid Paths</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+<!-- BARRA DE NAVEGACIÓN -->
+<nav>
+    <ul>
+        <li><a href="#slideshow-container" class="nav-link">Inicio</a></li>
+        <li><a href="#about-us" class="nav-link">About Us</a></li>
+        <li><a href="#our-services" class="nav-link">Our Services</a></li>
+        <li class="search-bar">
+            <input type="text" placeholder="Buscar rutas..." />
+            <button type="submit">
+                <img src="images/busqueda.png" alt="Buscar" class="icono-busqueda">
+            </button>
+        </li>
+        <li>
+            <a href="#head-login" class="nav-link" onclick="openPopup('login-popup')">
+                <img id="login-icon" src="images/inicio-sesion1.png" alt="Login" class="icono-login">
+            </a>
+        </li>
+    </ul>
+</nav>
+    <main>
+        <!-- INICIO DE SESIÓN -->
+        <div id="login-popup" class="popup">
+            <div class="popup-content login-box">
+                <span class="close" onclick="closePopup('login-popup')">&times;</span>
+                <h2>Login</h2>
+                <form>
+                    <div class="user-box">
+                        <input type="text" name="username" required="">
+                        <label>Username</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="password" name="password" required="">
+                        <label>Password</label>
+                    </div>
+                    <a href="#" onclick="closePopup('login-popup'); openPopup('create-popup');">Crear cuenta</a>
+                    <a href="#" onclick="closePopup('login-popup');">Submit</a>
+                </form>
+            </div>
+        </div>
+        <!-- CREAR CUENTA -->
+        <div id="create-popup" class="popup">
+            <div class="popup-content login-box">
+                <span class="close" onclick="closePopup('create-popup')">&times;</span>
+                <h2>Create Account</h2>
+                <form>
+                    <div class="user-box">
+                        <input type="text" name="username" required="">
+                        <label>Username</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="text" name="email" required="">
+                        <label>Email</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="password" name="password" required="">
+                        <label>Password</label>
+                    </div>
+                    <a href="#" onclick="closePopup('create-popup'); openPopup('login-popup');">Login</a>
+                    <a href="#" onclick="closePopup('create-popup');">Submit</a>
+                </form>
+            </div>
+        </div>
+        <br>
+        <br>
+        <!-- CARRUSEL IMAGENES -->
+        <section id="slideshow-container">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="./images/bici1.jpg">
+                </div>
+                <div class="mySlides fade">
+                    <img src="./images/bici2.jpg">
+                </div>
+                <div class="mySlides fade">
+                    <img src="./images/montaña1.jpg">
+                </div>
+                <div class="mySlides fade">
+                    <img src="./images/montaña2.jpg">
+                </div>
+                <div class="mySlides fade">
+                    <img src="./images/nieve1.jpg">
+                </div>
+                <div class="mySlides fade">
+                    <img src="./images/nieve2.jpg">
+                </div>
+                <div class="mySlides fade">
+                    <img src="./images/nieve3.jpg">
+                </div>
+                <div class="mySlides fade">
+                    <img src="./images/nieve4.jpg">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+                <span class="dot" onclick="currentSlide(8)"></span>
+            </div>
+        </section>
+        <!--La sección de las rutas-->
+        <div id="nuestras-rutas">
+            <h2>Nuestras rutas</h2>
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+            <section class="hero-section">
+                <div class="card-grid">
+                    <a class="card" href="#">
+                        <div class="card__background"
+                            style="background-image: url(images/ruta1.jpg)">
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category"> Alfondeguilla, Valencia (España)</p>
+                            <h3 class="card__heading">Castillo de Castro</h3>
+                            <!-- https://es.wikiloc.com/rutas-senderismo/subida-al-castillo-de-castro-por-el-collado-de-la-mina-bco-de-la-horteta-y-descenso-por-la-font-de-15473620 -->
+                        </div>
+                    </a>
+                    <a class="card" href="#">
+                        <div class="card__background"
+                            style="background-image: url(images/ruta2.jpg)">
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category"> Puerto de Cotos, Castilla y León (España)</p>
+                            <h3 class="card__heading">Pico Peñalara</h3>
+                            <!-- https://es.wikiloc.com/rutas-senderismo/pico-penalara-2428m-circular-integral-laguna-grande-laguna-claveles-5-lagunas-laguna-de-los-pajaros-171616911 -->
+                        </div>
+                    </a>
+                    <a class="card" href="#">
+                        <div class="card__background"
+                            style="background-image: url(images/ruta3.jpg)">
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category">Las Dehesas, Madrid (España)</p>
+                            <h3 class="card__heading">Mirador de los Poetas</h3>
+                            <!-- https://es.wikiloc.com/rutas-senderismo/pico-penalara-2428m-circular-integral-laguna-grande-laguna-claveles-5-lagunas-laguna-de-los-pajaros-171616911 -->
+                        </div>
+                        </li>
+                        <a class="card" href="#">
+                            <div class="card__background"
+                                style="background-image: url(images/ruta4.jpg)">
+                            </div>
+                            <div class="card__content">
+                                <p class="card__category">Fuente Dé, Cantabria</p>
+                                <h3 class="card__heading">Fuente Dé</h3>
+                                <!-- https://es.wikiloc.com/rutas-senderismo/mirador-de-los-poetas-reloj-de-cela-ducha-de-los-alemanes-las-dehesas-de-cercedilla-9042913 -->
+                            </div>
+                        </a>
+                    </a>
+                </div>
+            </section>
+            <section id="about-us">
+                <h2>About Us</h2>
+                <p>Discover the best off-grid paths and adventures.</p>
+            </section>
+            <section id="our-services">
+                <h2>Our Services</h2>
+                <p>We offer guided tours, equipment rentals, and more.</p>
+            </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 OffGrid Paths. All rights reserved.</p>
+    </footer>
+    <script src="scripts/scripts.js"></script>
+</body>
+
+</html>
